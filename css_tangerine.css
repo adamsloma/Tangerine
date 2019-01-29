@@ -1,0 +1,203 @@
+/* text and body */
+/**/
+
+body{
+    background-color: #EEE;
+    font-family: Helvetica, Arial, sansa-serif;
+}
+
+a{
+    text-decoration:none;
+    color:white;
+    background-color: #FF9933;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+ah{
+    text-decoration:none;
+    color:white;
+    background-color: #FF6633;
+}
+
+b{
+    text-decoration:none;
+    color:white;
+    background-color: #FF9933;  
+    text-align:center;
+}
+
+h1,h2,h3{
+    margin:0;
+}
+
+h2{
+    margin-top:10px;
+    background-color:white;
+}
+
+#container{
+    background-color: white;
+    width:800px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/**/
+/*header*/
+/**/
+
+#header{
+    background-color: #FF9933;
+    color: white;
+    padding: 10px;
+    display:inline-block;
+}
+
+#header ul{
+    list-style-type:none;
+    float:right;
+    background-color: #FF9933;
+    width:620;
+}
+#name{
+
+    float:left;
+    padding:0;
+    display:inline-block;
+    width:120;
+    color:white;
+}
+
+#header li{
+
+    display:inline;
+    margin-left: 30px;
+    text-align:center;
+    margin-right:30px;
+}
+
+/**/
+/* Content */
+/**/
+
+#content{
+    padding:20px;
+}
+
+#main{
+    float:right;
+    height:600px;
+    margin-right:10px;
+    margin-left:10px;
+}
+
+/**/
+/*footer*/
+/**/
+
+#footer{
+    clear:both;
+    padding: 20px;
+    background-color:#FF9933;
+    color:black;
+    text-align: right;
+}
+
+/**/
+/*info pagesr*/
+/**/
+
+#nav{
+    width:180px;
+    float:left;
+    height: 575px;
+    background-color:#FF6633;
+    margin-top:10px;
+}
+
+#header_nav{
+    background-color:#FF6633;
+    color:white;
+}
+
+
+#nav ul{
+    list-style-type:none;
+    padding:0;
+    margin-left:10px;
+    
+}
+
+#nav a{
+    color:white;
+    background-color: #FF6633;
+}
+
+#header.selected{
+    font-weight:bold;
+}
+
+#main_info{
+    width:600px;
+    height:600px;
+    float:right;
+    overflow-y:scroll;
+}
+
+/**/
+/*routine info*/
+/**/
+img{
+    width:190px;
+}
+#picture{
+    margin-top:50px;
+    float:left;
+    width:200px;
+    height:350px;
+}
+
+#routine_exercise{
+    float:right;
+    width:350;
+    height:400;
+}
+
+#exerciseHead{
+    text-align:center;
+    
+}
+
+#p.exerciseSets{
+    font-style:italic;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
