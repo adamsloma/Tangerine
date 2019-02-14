@@ -157,13 +157,13 @@ img{
     margin-top:50px;
     float:left;
     width:200px;
-    height:350px;
+    height:550px;
 }
 
 #routine_exercise{
     float:right;
     width:350;
-    height:400;
+    height:600;
 }
 
 #exerciseHead{
@@ -175,6 +175,49 @@ img{
     font-style:italic;
 }
 
+/**/
+/*cardio info*/
+/**/
+#cardio_picture{
+    margin-top:50px;
+    float:left;
+    width:200px;
+    height:350px;
+}
+
+#cardio_exercise{
+    float:right;
+    width:350;
+    height:400;
+}
+
+/**/
+/*hiit info*/
+/**/
+
+#picture_hiit{
+    margin-top:1px;
+    float:left;
+    width:200px;
+    height:149px;
+}
+
+#routine_exercise_hitt{
+    float:right;
+    width:350;
+    height:150;
+}
+
+/**/
+/*about page*/
+/**/
+
+#about_pics{
+    padding-top:50px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
 
 
 
