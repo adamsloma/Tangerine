@@ -21,4 +21,7 @@ After you've ensured that your working tree is clean, do a `git pull` to retriev
 After you work for a while, stage your changes by typing `git add .`. 
 To commit your changes, write `git commit -m "changes you made"`.
 
-After you've committed your changes, type `git push` to push your changes to the remote repository. 
+After you've committed your changes, type `git pull` to syncronize your changes with any new changes that another team member may have pushed since you started working. This will only cause an issue if you both edited the same file. 
+
+When you've verified there's no conflict with the latest iteration of your local repository and the latest iteration of the remote repository, type `git push` to update your changes to the remote repository. 
+
