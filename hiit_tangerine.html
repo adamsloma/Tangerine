@@ -1,45 +1,92 @@
-<html>
-    <head>
-        <title>Tangerine Fit</title>
-        <link rel="stylesheet" type="text/css" href="css_tangerine.css"/>
-    </head>
-    <body>
-        <div id="container">
-            <div id="header">
-                <b id="name"><font size = "+5">TF</font></b>
-                <ul>
-                    <li><a class="" href="home_tangerine.html">Home</a></li>
-                    <li><a class="selected" href="weightlifting_tangerine.html">Weightlifting</a></li>
-                    <li><a class="" href="cardio_tangerine.html">Cardio</a></li>
-                    <li><a class="" href="hiit_tangerine.html">HIIT</a></li>
-                    <li><a class="" href="about_tangerine.html">About</a></li>
-                </ul>
-            </div>
-            <div>
-                <div id="nav">
-                    <h2 align="center" id="header_nav">HIIT Routines</h2>
-                    <ul id="nav_ul">
-                        <h3><ah class="" href="">Strength</ah></h3>
-                        <li><a class="" href="hiit_strength_101.html">-  Strength 101</a></li>
-                        <li><a class="" href="hiit_strength_102.html">-  Strength 102</a></li>
-                        <li><a class="" href="hiit_strength_103.html">-  Strength 103</a></li>
-                        <h3><ah class="" href="">Fat Loss</ah></h3>
-                        <li><a class="" href="hiit_fl_101.html">-  Fat Loss 101</a></li>
-                        <li><a class="" href="hiit_fl_102.html">-  Fat Loss 102</a></li>
-                        <li><a class="" href="hiit_fl_103.html">-  Fat Loss 103</a></li>
-                    </ul>
-                </div>
-                <div id="main_info">
-                    <h2 align="center">High Intensity Interval Training</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </div>
+<!doctype html>
+<html lang="en">
 
-            <div id = "footer">
-                Copyright &copy; 2019 Tangerine Fit.
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewpoint" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Tagnerine Fit</title>
+      <!-- BOOTSTRAP -->
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+    </head>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fd7e14;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand text-light" href="home_tangerine.html">Tangerine Fit</a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav">
+          <!-- HOME BUTTON -->
+          <li class="nav-item">
+            <a class="btn btn-light" role="button" href="home_tangerine.html">Home</a>
+          </li>
+          <!-- WEIGHTLIFTING DROPDOWN BUTTON -->
+          <li class="nav-item dropdown">
+            <div class="btn-group">
+              <a class="btn btn-light" href="weightlifting_tangerine.html" role="button">Weightlifting</a>
+              <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="chest_101.html">Chest</a>
+                <a class="dropdown-item" href="back_101.html">Back</a>
+                <a class="dropdown-item" href="legs_101.html">Legs</a>
+                <a class="dropdown-item" href="shoulderes_101.html">Shoulders</a>
+                <a class="dropdown-item" href="arms_101.html">Arms</a>
+                <a class="dropdown-item" href="abs_101.html">Abdominals</a>
+              </div>
             </div>
-        </div>
-    </body>
+          </li>
+          <!-- CARDIO DROPDOWN BUTTON -->
+          <li class="nav-item dropdown">
+            <div class="btn-group">
+              <a class="btn btn-light" href="cardio_tangerine.html" role="button">Cardio</a>
+              <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="treadmill.html">Treadmill</a>
+                <a class="dropdown-item" href="exercise_bike.html">Exercise Bike</a>
+                <a class="dropdown-item" href="ellipptical.html">Elliptical</a>
+                <a class="dropdown-item" href="rowing.html">Rowing Machine</a>
+                <a class="dropdown-item" href="stairmaster.html">StairMaster</a>
+              </div>
+            </div>
+          </li>
+          <!-- HIIT DROPDOWN BUTTON -->
+          <li class="nav-item dropdown">
+            <div class="btn-group">
+              <a class="btn btn-light" href="hiit_tangerine.html" role="button">HIIT</a>
+              <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="hiit_strength_101.html">Strength</a>
+                <a class="dropdown-item" href="hiit_fl_101.html">Fat Loss</a>
+              </div>
+            </div>
+          </li>
+          <!-- ABOUT BUTTON -->
+          <li class="nav-item">
+            <a class="btn btn-light" role="button" href="about_tangerine.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- BODY -->
+    <div class="container">
+      <div id="main">
+        <br>
+        <h1 align="center">High Intensity Interval Training</h1><br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </div>
+
 </html>
