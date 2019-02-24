@@ -1,67 +1,117 @@
-<html>
-    <head>
-        <title>Tangerine Fit</title>
-        <link rel="stylesheet" type="text/css" href="css_tangerine.css"/>
-    </head>
-    <body>
-        <div id="container">
-            <div id="header">
-                <b id="name"><font size = "+5">TF</font></b>
-                <ul>
-                    <li><a class="" href="home_tangerine.html">Home</a></li>
-                    <li><a class="selected" href="weightlifting_tangerine.html">Weightlifting</a></li>
-                    <li><a class="" href="cardio_tangerine.html">Cardio</a></li>
-                    <li><a class="" href="hiit_tangerine.html">HIIT</a></li>
-                    <li><a class="" href="about_tangerine.html">About</a></li>
-                </ul>
-            </div>
-            <div>
-                <div id="nav">
-                    <h2 align="center" id="header_nav">Weightlifting Routines</h2>
-                    <ul id="nav_ul">
-                        <h3><ah class="" href="">Chest</ah></h3>
-                        <li><a class="" href="chest_101.html">-  Chest 101</a></li>
-                        <li><a class="" href="chest_102.html">-  Chest 102</a></li>
-                        <li><a class="" href="chest_103.html">-  Chest 103</a></li>
-                        <h3><ah class="" href="">Back</ah></h3>
-                        <li><a class="" href="back_101.html">-  Back 101</a></li>
-                        <li><a class="" href="back_102.html">-  Back 102</a></li>
-                        <li><a class="" href="back_103.html">-  Back 103</a></li>
-                        <h3><ah class="" href="">Legs</ah></h3>
-                        <li><a class="" href="legs_101.html">-  Legs 101</a></li>
-                        <li><a class="" href="legs_102.html">-  Legs 102</a></li>
-                        <li><a class="" href="legs_103.html">-  Legs 103</a></li>
-                        <h3><ah class="" href="">Shoulders</ah></h3>
-                        <li><a class="" href="shoulders_101.html">-  Shoulders 101</a></li>
-                        <li><a class="" href="shoulders_102.html">-  Shoulders 102</a></li>
-                        <li><a class="" href="shoulders_103.html">-  Shoulders 103</a></li>
-                        <h3><ah class="" href="">Arms</ah></h3>
-                        <li><a class="" href="arms_101.html">-  Arms 101</a></li>
-                        <li><a class="" href="arms_102.html">-  Arms 102</a></li>
-                        <li><a class="" href="arms_103.html">-  Arms 103</a></li>
-                        <h3><ah class="" href="">Abdominals</ah></h3>
-                        <li><a class="" href="abs_101.html">-  Abdominals 101</a></li>
-                        <li><a class="" href="abs_102.html">-  Abdominals 102</a></li>
-                        <li><a class="" href="abs_103.html">-  Abdominals 103</a></li>
-                    </ul>
-                </div>
-                <div id="main_info">
-                    <h2 align="center">Weightlifting</h2>
-                    <p>Tangerine Fit Weightlifting is designed for athletes to make the most out of their time in the gym. Each exercise routine is constructed from the ground up to ensure that the user can build the maximum amount of muscle and not spend hours in the gym.</p>
-                    <h2 align="center">101 Series</h2>
-                    <p>Our 101 series is designed for beginners in the weightroom to ensure that aspiring athletes are able to build a solid foundation. At Tangerine Fit, we place an emphasis on control and form while performing our exercises, and the 101 series allows althletes to get comfortable with exercises while still building muscle.</p>
-                    <h2 align="center">102 Series</h2>
-                    <p>The 102 series is designed for intermediate athletes. These workouts are much more taxing on the body and include advanced lifting techniques, such as dropsets and supersets. We recommend that athletes perform our 101 series before attempting the 102 series to ensure that they are comfortable with the Tangerine Fit Weightlifting style.</p>
-                    <h2 align="center">103 Series</h2>
-                    <p>The 103 series is designed with the advanced weightlifting athlete in mind. We recommend athletes perform both our 101 and 102 series for an extended period of time before attempting the 103 series. This series is tailored for athletes with a solid foundation and a substantial amount of mass in the targeted muscle group.</p>
-                    <h2 align="center">Tangerine Fit Training Regiment</h2>
-                    <p>We recommend attempting the 101 series for up to 2 months to build a foundation. We then suggest attempting the 102 series for up to 2 months once our athletes are accustomed to the 101 series. Next, we believe that our athletes should transition back to the 101 series to perform those routines for up to 2 more months with the strength they have built over the last 4 months. Next, we have our athletes perform the 102 series once again for up to 2 more months. If our athletes feel comfortable after these 6 months of training, we urge them to try the 103 series with lighter weight for up to 2 months before transitioning back to the 102 series with newly found strength and mass for up to 2 months. After that, we feel our athletes will be able to handle the 103 series with heavier weight. This allows our athletes to train and maximize muscle growth of the period of a year and get them accostomed to a variety of exercises in the weightroom. </p>
-                </div>
-            </div>
+<!doctype html>
+<html lang="en">
 
-            <div id = "footer">
-                Copyright &copy; 2019 Tangerine Fit.
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewpoint" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Tagnerine Fit</title>
+      <!-- BOOTSTRAP -->
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+    </head>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fd7e14;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand text-light" href="home_tangerine.html">Tangerine Fit</a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav">
+          <!-- HOME BUTTON -->
+          <li class="nav-item">
+            <a class="btn btn-light" role="button" href="home_tangerine.html">Home</a>
+          </li>
+          <!-- WEIGHTLIFTING DROPDOWN BUTTON -->
+          <li class="nav-item dropdown">
+            <div class="btn-group">
+              <a class="btn btn-light" href="weightlifting_tangerine.html" role="button">Weightlifting</a>
+              <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="chest_101.html">Chest</a>
+                <a class="dropdown-item" href="back_101.html">Back</a>
+                <a class="dropdown-item" href="legs_101.html">Legs</a>
+                <a class="dropdown-item" href="shoulderes_101.html">Shoulders</a>
+                <a class="dropdown-item" href="arms_101.html">Arms</a>
+                <a class="dropdown-item" href="abs_101.html">Abdominals</a>
+              </div>
             </div>
-        </div>
-    </body>
+          </li>
+          <!-- CARDIO DROPDOWN BUTTON -->
+          <li class="nav-item dropdown">
+            <div class="btn-group">
+              <a class="btn btn-light" href="cardio_tangerine.html" role="button">Cardio</a>
+              <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="treadmill.html">Treadmill</a>
+                <a class="dropdown-item" href="exercise_bike.html">Exercise Bike</a>
+                <a class="dropdown-item" href="ellipptical.html">Elliptical</a>
+                <a class="dropdown-item" href="rowing.html">Rowing Machine</a>
+                <a class="dropdown-item" href="stairmaster.html">StairMaster</a>
+              </div>
+            </div>
+          </li>
+          <!-- HIIT DROPDOWN BUTTON -->
+          <li class="nav-item dropdown">
+            <div class="btn-group">
+              <a class="btn btn-light" href="hiit_tangerine.html" role="button">HIIT</a>
+              <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="hiit_strength_101.html">Strength</a>
+                <a class="dropdown-item" href="hiit_fl_101.html">Fat Loss</a>
+              </div>
+            </div>
+          </li>
+          <!-- ABOUT BUTTON -->
+          <li class="nav-item">
+            <a class="btn btn-light" role="button" href="about_tangerine.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- BODY -->
+    <div id="main">
+      <br>
+      <h1 align="center">Weightlifting</h1><br>
+      <p>Tangerine Fit Weightlifting is designed for athletes to make the most out of their time in the gym.
+        Each exercise routine is constructed from the ground up to ensure that the user can build the maximum
+        amount of muscle and not spend hours in the gym.</p><br>
+      <h2 align="center">101 Series</h2><br>
+      <p>Our 101 series is designed for beginners in the weightroom to ensure that aspiring athletes are
+        able to build a solid foundation. At Tangerine Fit, we place an emphasis on control and form while
+        performing our exercises, and the 101 series allows althletes to get comfortable with exercises
+        while still building muscle.</p><br>
+      <h2 align="center">102 Series</h2><br>
+      <p>The 102 series is designed for intermediate athletes. These workouts are much more taxing on
+        the body and include advanced lifting techniques, such as dropsets and supersets. We recommend
+        that athletes perform our 101 series before attempting the 102 series to ensure that they are
+        comfortable with the Tangerine Fit Weightlifting style.</p><br>
+      <h2 align="center">103 Series</h2><br>
+      <p>The 103 series is designed with the advanced weightlifting athlete in mind. We recommend
+        athletes perform both our 101 and 102 series for an extended period of time before attempting
+        the 103 series. This series is tailored for athletes with a solid foundation and a substantial
+        amount of mass in the targeted muscle group.</p><br>
+      <h2 align="center">Tangerine Fit Training Regiment</h2><br>
+      <p>We recommend attempting the 101 series for up to 2 months to build a foundation. We then
+        suggest attempting the 102 series for up to 2 months once our athletes are accustomed to
+        the 101 series. Next, we believe that our athletes should transition back to the 101 series
+        to perform those routines for up to 2 more months with the strength they have built over the
+        last 4 months. Next, we have our athletes perform the 102 series once again for up to 2
+        more months. If our athletes feel comfortable after these 6 months of training, we urge them
+        to try the 103 series with lighter weight for up to 2 months before transitioning back to the
+        102 series with newly found strength and mass for up to 2 months. After that, we feel our
+        athletes will be able to handle the 103 series with heavier weight. This allows our athletes to
+        train and maximize muscle growth of the period of a year and get them accostomed to a variety
+        of exercises in the weightroom.</p>
+    </div>
+
 </html>
