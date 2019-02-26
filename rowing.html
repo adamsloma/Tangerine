@@ -1,61 +1,131 @@
-<html>
-    <head>
-        <title>Tangerine Fit</title>
-        <link rel="stylesheet" type="text/css" href="css_tangerine.css"/>
-    </head>
-    <body>
-        <div id="container">
-            <div id="header">
-                <b id="name"><font size = "+5">TF</font></b>
-                <ul>
-                    <li><a class="" href="home_tangerine.html">Home</a></li>
-                    <li><a class="selected" href="weightlifting_tangerine.html">Weightlifting</a></li>
-                    <li><a class="" href="cardio_tangerine.html">Cardio</a></li>
-                    <li><a class="" href="hiit_tangerine.html">HIIT</a></li>
-                    <li><a class="" href="about_tangerine.html">About</a></li>
-                </ul>
-            </div>
-            <div>
-                <div id="nav">
-                    <h2 align="center" id="header_nav">Cardio Machine Workouts</h2>
-                    <ul id="nav_ul">
-                        <li><a class="" href="treadmill.html">Treadmill</a></li>
-                        <li><a class="" href="exercise_bike.html">Exercise Bike</a></li>
-                        <li><a class="" href="elliptical.html">Elliptical</a></li>
-                        <li><a class="" href="rowing.html">Rowing Machine</a></li>
-                        <li><a class="" href="stairmaster.html">StairMaster</a></li>
-                    </ul>
-                </div>
-                <div id="main_info">
-                    <div id="main_info_header">
-                        <h2 align="center">Rowing Machine</h2>
-                    </div>
-                    <div id="routine">
-                        <div id="cardio_picture">
-                            <img src="rowing_fat_loss.jpeg" alt="Rowing Fat Loss">
-                        </div>
-                        <div id="cardio_exercise">
-                            <h4><exerciseHead>Fat Loss</exerciseHead></h4>
-                            <p><i>5 minute warm up period</i>: 2 minutes using just your arms to warm up the back, and 3 minutes doing the full movement at a normal pace</p>
-                            <p><u>Fat Loss Interval</u>: Perform between 10 and 20 times for a workout.<br/><i>- Moderate rowing period</i>: 1 minutes of moderate speed rowing<br/><i>- Fast rowing period</i>: 30 seconds of intense rowing</p>
-                            <p><u>Fat Loss Interval</u> x 10 = 20 minutes<br/><u>Fat Loss Interval</u> x 20 = 35 minutes</p>
-                        </div>
-                        <div id="picture">
-                            <img src="rowing_conditioning.jpg" alt="Rowing Conditioning">
-                        </div>
-                        <div id="routine_exercise">
-                            <h4><exerciseHead>Conditioning</exerciseHead></h4>
-                            <p><i>5 minute warm up period</i>: 2 minutes using just your arms to warm up the back, and 3 minutes doing the full movement at a normal pace</p>
-                            <p><u>Conditioning Interval</u>: Perform between 15 and 25 times for a workout.<br/><i>- Moderate rowing period</i>: 2 minutes of moderate speed rowing<br/><i>- Fast rowing period</i>: 30 seconds of intense rowing</p>
-                            <p><u>Conditioning Interval</u> x 10 = 30 minutes<br/><u>Conditioning Interval</u> x 20 = 55 minutes</p>
-                        </div>
-                    </div>   
-                </div>
-            </div>
+<!doctype html>
+<html lang="en">
 
-            <div id = "footer">
-                Copyright &copy; 2019 Tangerine Fit.
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewpoint" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Tangerine Fit</title>
+      <!-- BOOTSTRAP -->
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+    </head>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #fd7e14;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand text-light" href="home_tangerine.html">Tangerine Fit</a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav">
+          <!-- HOME BUTTON -->
+          <li class="nav-item">
+            <a class="btn btn-light" role="button" href="home_tangerine.html">Home</a>
+          </li>
+          <!-- WEIGHTLIFTING DROPDOWN BUTTON -->
+          <li class="nav-item dropdown">
+            <div class="btn-group">
+              <a class="btn btn-light" href="weightlifting_tangerine.html" role="button">Weightlifting</a>
+              <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="chest_101.html">Chest</a>
+                <a class="dropdown-item" href="back_101.html">Back</a>
+                <a class="dropdown-item" href="legs_101.html">Legs</a>
+                <a class="dropdown-item" href="shoulders_101.html">Shoulders</a>
+                <a class="dropdown-item" href="arms_101.html">Arms</a>
+                <a class="dropdown-item" href="abs_101.html">Abdominals</a>
+              </div>
             </div>
+          </li>
+          <!-- CARDIO DROPDOWN BUTTON -->
+          <li class="nav-item dropdown">
+            <div class="btn-group">
+              <a class="btn btn-light" href="cardio_tangerine.html" role="button">Cardio</a>
+              <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="treadmill.html">Treadmill</a>
+                <a class="dropdown-item" href="exercise_bike.html">Exercise Bike</a>
+                <a class="dropdown-item" href="elliptical.html">Elliptical</a>
+                <a class="dropdown-item" href="rowing.html">Rowing Machine</a>
+                <a class="dropdown-item" href="stairmaster.html">StairMaster</a>
+              </div>
+            </div>
+          </li>
+          <!-- HIIT DROPDOWN BUTTON -->
+          <li class="nav-item dropdown">
+            <div class="btn-group">
+              <a class="btn btn-light" href="hiit_tangerine.html" role="button">HIIT</a>
+              <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="hiit_strength_101.html">Strength</a>
+                <a class="dropdown-item" href="hiit_fl_101.html">Fat Loss</a>
+              </div>
+            </div>
+          </li>
+          <!-- ABOUT BUTTON -->
+          <li class="nav-item">
+            <a class="btn btn-light" role="button" href="about_tangerine.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!--  GRID BUTTONS -->
+    <!--
+    <div class="container">
+      <br><br><br>
+      <div class="row">
+        <div class="col-md-4">
+          <a class="btn btn-light btn-outline-primary btn-lg btn-block disabled" href="chest_101.html" role="button">Chest 101</a>
         </div>
-    </body>
+        <div class="col-md-4">
+          <a class="btn btn-light btn-outline-primary btn-lg btn-block" href="chest_102.html" role="button">Chest 102</a>
+        </div>
+        <div class="col-md-4">
+          <a class="btn btn-light btn-outline-primary btn-lg btn-block" href="chest_103.html" role="button">Chest 103</a>
+        </div>
+      </div>
+    </div><br><br>
+  -->
+  <br>
+  <br>
+  <br>
+    <!-- BODY -->
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-md-10">
+          <div class="card border-light mb-3">
+            <div class="card-header text-center h5">Fat Loss</div>
+            <div class="card-body text-center">
+              <img src="rowing_fat_loss.jpeg" class="img-fluid" alt="Responsive image">
+              <p><i>5 minute warm up period</i>: 2 minutes using just your arms to warm up the back, and 3 minutes doing the full movement at a normal pace</p>
+              <p><u>Fat Loss Interval</u>: Perform between 10 and 20 times for a workout.<br/><i>- Moderate rowing period</i>: 1 minutes of moderate speed rowing<br/><i>- Fast rowing period</i>: 30 seconds of intense rowing</p>
+              <p><u>Fat Loss Interval</u> x 10 = 20 minutes<br/><u>Fat Loss Interval</u> x 20 = 35 minutes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-md-center">
+        <div class="col-md-10">
+          <div class="card border-light mb-3">
+            <div class="card-header text-center h5">Conditioning</div>
+            <div class="card-body text-center">
+              <img src="rowing_conditioning.jpg" class="img-fluid" alt="Responsive image">
+              <p><i>5 minute warm up period</i>: 2 minutes using just your arms to warm up the back, and 3 minutes doing the full movement at a normal pace</p>
+              <p><u>Conditioning Interval</u>: Perform between 15 and 25 times for a workout.<br/><i>- Moderate rowing period</i>: 2 minutes of moderate speed rowing<br/><i>- Fast rowing period</i>: 30 seconds of intense rowing</p>
+              <p><u>Conditioning Interval</u> x 10 = 30 minutes<br/><u>Conditioning Interval</u> x 20 = 55 minutes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
 </html>
