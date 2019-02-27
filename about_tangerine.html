@@ -11,6 +11,38 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
+      <!-- The firebase information. Its the following two scripts that will be added wherever firebase will be needed-->
+      <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+      <script>
+        // Initialize Firebase
+        // TODO:Replace everything inside the config with your own things(to Adam)
+        //Make sure that the firebase is a live database and not a standard database and also edit the permissions to display True
+        var config = {
+          piKey: "AIzaSyDAmQ3nH3wD2WbGuigeNQYhmW_mp0nQdIU",
+          authDomain: "project-26ab1.firebaseapp.com",
+          databaseURL: "https://project-26ab1.firebaseio.com",
+          projectId: "project-26ab1",
+          storageBucket: "project-26ab1.appspot.com",
+          messagingSenderId: "888262615637"
+        };
+        firebase.initializeApp(config);
+        /* code that didn't work
+        var test = document.getElementById("test");
+        var dbRef = firebase.database().ref().child('text');
+        dbRef.on('value', snap => bigOne.innerText = snap.val());
+        console.log("Test");*/
+
+        //example code that pushes up info to the cloud
+        function writeUserData(userId, name, email, imageUrl) {
+          firebase.database().ref('users/' + userId).set({
+            username: name,
+            email: email,
+            profile_picture : imageUrl
+          });
+        }
+
+        writeUserData("233","jose","joseandrade","test.png"); //calling this function to test
+      </script>
     </head>
 
     <!-- NAVIGATION BAR -->
@@ -18,7 +50,7 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand text-light" href="home_tangerine.html">Tangerine Fit</a>
+      <a class="navbar-brand text-light" href="home_tangerine.html" id="test">Tangerine Fit</a>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav">
           <!-- HOME BUTTON -->
