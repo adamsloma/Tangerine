@@ -11,6 +11,39 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
+
+      <!-- The firebase information. Its the following two scripts that will be added wherever firebase will be needed-->
+      <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+      <script>
+        // Initialize Firebase
+        // TODO:Replace everything inside the config with your own things(to Adam)
+        //Make sure that the firebase is a live database and not a standard database and also edit the permissions to display True
+        var config = {
+          piKey: "AIzaSyDAmQ3nH3wD2WbGuigeNQYhmW_mp0nQdIU",
+          authDomain: "project-26ab1.firebaseapp.com",
+          databaseURL: "https://project-26ab1.firebaseio.com",
+          projectId: "project-26ab1",
+          storageBucket: "project-26ab1.appspot.com",
+          messagingSenderId: "888262615637"
+        };
+        firebase.initializeApp(config);
+        /* code that didn't work
+        var test = document.getElementById("test");
+        var dbRef = firebase.database().ref().child('text');
+        dbRef.on('value', snap => bigOne.innerText = snap.val());
+        console.log("Test");*/
+
+        //example code that pushes up info to the cloud
+        function writeUserData(userId, name, email, imageUrl) {
+          firebase.database().ref('users/' + userId).set({
+            username: name,
+            email: email,
+            profile_picture : imageUrl
+          });
+        }
+
+        writeUserData("233","jose","joseandrade","test.png"); //calling this function to test
+      </script>
     </head>
 
     <!-- NAVIGATION BAR -->
@@ -18,7 +51,7 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand text-light" href="home_tangerine.html">Tangerine Fit</a>
+      <a class="navbar-brand text-light" href="home_tangerine.html" id="test">Tangerine Fit</a>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav">
           <!-- HOME BUTTON -->
@@ -77,44 +110,45 @@
           </li>
         </ul>
       </div>
-      <!-- LOG-IN LINK -->
+      <!-- LOG IN LINK -->
       <div>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="btn btn-light" role="button" href="login.html">Log in</a>
+            <a class="btn btn-light disabled" role="button" href="login.html">Log in</a>
           </li>
         </ul>
       </div>
-    </nav><br><br><br>
+    </nav>
+    <br><br><br><br>
     <!-- BODY -->
     <div class="container">
       <div class="row justify-content-md-center">
-        <div class="col-md-10">
-          <div class="card border-light mb-3">
-            <div class="card-header text-center h5">Fat Loss</div>
-            <div class="card-body text-center">
-              <img src="elliptical_fat_loss.jpg" class="img-fluid" alt="Responsive image">
-              <p><i>*Actively push/pull with your arms for best results*</i></p>
-              <p><i>5 minute warm up period</i>: move at a normal pace</p>
-              <p><u>Fat Loss Interval</u>: Perform between 10 and 20 times for a workout.<br/><i>- Fast movement period</i>: 2 minutes of fast movement<br/><i>- Sprinting period</i>: 1 minute of intense movement</p>
-              <p><u>Fat Loss Interval</u> x 10 = 35 minutes<br/><u>Fat Loss Interval</u> x 20 = 65 minutes</p>
+        <div class="col align-self-center">
+          <div class="card">
+            <div class="card-body">
+              <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter password">
+                </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary">Log in</button><br>
+                  <a class="btn btn-link text-dark" href="#" role="button">Forgot Password?</a><br>
+                  <a class="btn btn-link text-dark" href="#" role="button">Don't have an account? <b>Get Sarted</b></a>
+                </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="row justify-content-md-center">
-        <div class="col-md-10">
-          <div class="card border-light mb-3">
-            <div class="card-header text-center h5">Conditioning</div>
-            <div class="card-body text-center">
-              <img src="elliptical_conditioning.jpg" class="img-fluid" alt="Responsive image">
-              <p><i>10 minute warm up period</i>: pedal at a light speed</p>
-              <p><u>Conditioning Interval</u>: Perform between 15 and 25 times for a workout.<br/><i>- Fast movement period</i>: 3 minutes of fast movement<br/><i>- Sprinting period</i>: 1 minute of intense movement</p>
-              <p><u>Conditioning Interval</u> x 10 = 50 minutes<br/><u>Conditioning Interval</u> x 20 = 90 minutes</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
 
 </html>
