@@ -47,7 +47,7 @@ class Person {
         };
     }
 
-    // month isn't even anything. it's just four weeks
+    // month isn't even anything. it's just four weeks ...... this depends on the month tho
     addEmptyMonth() {
         for (var i = 0; i < 4; i++) {
             this.addEmptyWeek()
@@ -75,6 +75,7 @@ var config = {
     messagingSenderId: "439864139122"
 };
 firebase.initializeApp(config);
+var database = firebase.database();
 /* code that didn't work
 var test = document.getElementById("test");
 var dbRef = firebase.database().ref().child('text');
@@ -83,8 +84,8 @@ console.log("Test");*/
 
 // TODO: implement Person, Schedule and Workout classes to push and pull from Firebase
 // TODO: implement exception handling for new classes
-// TODO: implement writing to Database
-// TODO: implement reading from Database
+// TODO: implement writing to Database ---- done?
+// TODO: implement reading from Database---- Done
 // TODO: fix schedule component so that it's written to the database
 
 function writePerson(person) {
@@ -96,6 +97,18 @@ function writePerson(person) {
     });
 }
 
+function getPersons(){
+        var peopleList = [];
+        var leadsRef = database.ref('users');
+        leadsRef.on('value', function(snapshot) {
+            snapshot.forEach(function(childSnapshot) {
+              var childData = childSnapshot.val(); //childData is just the child of the information that is going in
+              peopleList.push(childData);
+              console.log(childData);
+            });
+        });
+}
+
 var stephan = new Person("barryharrisfan420", "marx123", "5");
 writePerson(stephan);
-
+getPersons();
