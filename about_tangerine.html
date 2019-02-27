@@ -13,36 +13,7 @@
       <script src="js/bootstrap.min.js"></script>
       <!-- The firebase information. Its the following two scripts that will be added wherever firebase will be needed-->
       <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
-      <script>
-        // Initialize Firebase
-        // TODO:Replace everything inside the config with your own things(to Adam)
-        //Make sure that the firebase is a live database and not a standard database and also edit the permissions to display True
-        var config = {
-          apiKey: "AIzaSyBaHVox7skGzll8OrkVvoTknlnLk5ba7y8",
-          authDomain: "tangerine-ba3ad.firebaseapp.com",
-          databaseURL: "https://tangerine-ba3ad.firebaseio.com",
-          projectId: "tangerine-ba3ad",
-          storageBucket: "tangerine-ba3ad.appspot.com",
-          messagingSenderId: "439864139122"
-        };
-        firebase.initializeApp(config);
-        /* code that didn't work
-        var test = document.getElementById("test");
-        var dbRef = firebase.database().ref().child('text');
-        dbRef.on('value', snap => bigOne.innerText = snap.val());
-        console.log("Test");*/
-
-        //example code that pushes up info to the cloud
-        function writeUserData(userId, name, email, imageUrl) {
-          firebase.database().ref('users/' + userId).set({
-            username: name,
-            email: email,
-            profile_picture : imageUrl
-          });
-        }
-
-        writeUserData("233","jose","joseandrade","test.png"); //calling this function to test
-      </script>
+      <script src="js/db_handling.js"></script>
     </head>
 
     <!-- NAVIGATION BAR -->
