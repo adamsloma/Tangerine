@@ -107,6 +107,7 @@ function getPersons(){
               console.log(childData);
             });
         });
+        return peopleList;
 }
 
 var stephan = new Person("alanisawesome", "marx123", "4");
