@@ -89,7 +89,7 @@ console.log("Test");*/
 // TODO: fix schedule component so that it's written to the database
 
 function writePerson(person) {
-    firebase.database().ref('users').push({
+    database.ref('users').push({
         username: person.uname,
         password: person.password,
         level: person.level,
@@ -109,6 +109,6 @@ function getPersons(){
         });
 }
 
-var stephan = new Person("barryharrisfan420", "marx123", "5");
+var stephan = new Person("alanisawesome", "marx123", "4");
 writePerson(stephan);
 getPersons();
