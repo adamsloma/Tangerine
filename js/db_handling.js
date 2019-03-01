@@ -33,6 +33,24 @@ class Person {
         this._schedule[this.count+1] = workoutList
     }
 
+    addDay2(workoutList){
+      this._schedule[getDate()] = workoutList;
+      }
+
+    turnDictIntoList(dict) //this does what it says, turns a dictionary into a list in order to sort it when needed
+    {
+      var items = Object.keys(dict).map(function(key) {
+        return [key, dict[key]];
+        });
+    }
+    // Sort the array based on the second element
+    sortByKey()
+    {
+      items.sort(function(first, second) {
+        return first[0] - second[0];
+      });
+    }
+
     // week is a so-called "dictionary"
     // each value in the key-value pair represents a day, which is a "dictionary of workout instances"
     addEmptyWeek() {
@@ -45,7 +63,7 @@ class Person {
             "sat": {},
             "sun": {}
         };
-    }
+    } cc
 
     // month isn't even anything. it's just four weeks ...... this depends on the month tho
     addEmptyMonth() {
@@ -76,11 +94,6 @@ var config = {
 };
 firebase.initializeApp(config);
 var database = firebase.database();
-/* code that didn't work
-var test = document.getElementById("test");
-var dbRef = firebase.database().ref().child('text');
-dbRef.on('value', snap => bigOne.innerText = snap.val());
-console.log("Test");*/
 
 // TODO: implement Person, Schedule and Workout classes to push and pull from Firebase
 // TODO: implement exception handling for new classes
@@ -108,6 +121,7 @@ function getPersons(){
             });
         });
         return peopleList;
+        console.log(leadsRef);
 }
 
 var stephan = new Person("alanisawesome", "marx123", "4");
