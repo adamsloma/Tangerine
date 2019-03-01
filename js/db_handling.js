@@ -30,7 +30,8 @@ class Person {
 
     // a day is represented by a "dictionary" of Workout instances
     addDay(workoutList) {
-        this._schedule[this.count+1] = workoutList
+        this._schedule[this.count+1] = workoutList;
+        this.count += 1;
     }
 
     // week is a so-called "dictionary"
@@ -45,11 +46,13 @@ class Person {
             "sat": {},
             "sun": {}
         };
+
+        this.count += 1;
     }
 
     // month isn't even anything. it's just four weeks ...... this depends on the month tho
     addEmptyMonth() {
-        for (var i = 0; i < 4; i++) {
+        for (let i = 0; i < 4; i++) {
             this.addEmptyWeek()
         }
     }
@@ -74,6 +77,7 @@ var config = {
     storageBucket: "tangerine-ba3ad.appspot.com",
     messagingSenderId: "439864139122"
 };
+
 firebase.initializeApp(config);
 var database = firebase.database();
 /* code that didn't work
@@ -89,13 +93,32 @@ console.log("Test");*/
 // TODO: fix schedule component so that it's written to the database
 
 function writePerson(person) {
-    database.ref('users').push({
-        username: person.uname,
+    database.ref('users/' + person.uname).set({
         password: person.password,
         level: person.level,
-        schedule: person._schedule
+        schedule: ""
     });
+
+    // writePersonSchedule('users/' + person.uname + '/schedule/', person._schedule)
 }
+
+// NOT WORKING
+function writePersonSchedule(path, s) { // assuming the path refers to the location in the database that we want to place s
+    // assuming s is an object (a dictionary)
+    for (let k in s) { // for each key in s
+        if (s.hasOwnProperty(k) === false) {
+            return
+        }
+        // if the type of the object at the specific key is a string
+        // that means we're at the deepest level of the s object's structure
+        if (typeof s[k] === 'string') {
+            database.ref(path + key + '/').set(s[k]); // publish the key value pair at the specified path
+        } else {
+            writePersonSchedule(path + key + '/', s[key]) // if it's not a string, it's an object and we must recur a level deeper
+        }
+    }
+}
+
 
 function getPersons(){
         var peopleList = [];
@@ -109,6 +132,8 @@ function getPersons(){
         });
 }
 
-var stephan = new Person("alanisawesome", "marx123", "4");
+var stephan = new Person("jose", "joseisawesome", "2");
+stephan.addEmptyMonth();
+console.log(stephan._schedule);
 writePerson(stephan);
-getPersons();
+// getPersons();
