@@ -38,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/db_handling.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
+            <state relative-caret-position="222">
+              <caret line="69" column="5" lean-forward="true" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -57,6 +57,7 @@
     <findStrings>
       <find>writeUserData</find>
       <find>[]</find>
+      <find>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</find>
     </findStrings>
     <replaceStrings>
       <replace>{}</replace>
@@ -117,12 +118,12 @@
       <workItem from="1551082502518" duration="337000" />
       <workItem from="1551251840938" duration="5366000" />
       <workItem from="1551387339878" duration="93000" />
-      <workItem from="1551387531770" duration="4917000" />
+      <workItem from="1551387531770" duration="5376000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15816000" />
+    <option name="totallyTimeSpent" value="16275000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -135,7 +136,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49856734" weight="0.24609666" />
       <window_info id="Structure" order="1" sideWeight="0.50143266" side_tool="true" weight="0.24609666" />
@@ -149,7 +149,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3295129" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.30802292" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.44555873" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.5329513" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -221,8 +221,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/db_handling.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
+        <state relative-caret-position="222">
+          <caret line="69" column="5" lean-forward="true" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
         </state>
       </provider>
     </entry>
