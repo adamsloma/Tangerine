@@ -64,13 +64,10 @@ class Person {
             "sat": {},
             "sun": {}
         };
-<<<<<<< HEAD
 
         this.count += 1;
     }
-=======
-    } cc
->>>>>>> 043f116961b3e05dd7b8343993353db795624d12
+    }
 
     // month isn't even anything. it's just four weeks ...... this depends on the month tho
     addEmptyMonth() {
