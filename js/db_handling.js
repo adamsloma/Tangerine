@@ -55,18 +55,9 @@ class Person {
     // week is a so-called "dictionary"
     // each value in the key-value pair represents a day, which is a "dictionary of workout instances"
     addEmptyWeek() {
-        this._schedule[this.count+1] = {
-            "mon": {},
-            "tue": {},
-            "wed": {},
-            "thu": {},
-            "fri": {},
-            "sat": {},
-            "sun": {}
-        };
-
-        this.count += 1;
-    }
+        for (let i = 0; i < 7; i++) {
+            this.addDay({})
+        }
     }
 
     // month isn't even anything. it's just four weeks ...... this depends on the month tho
@@ -128,7 +119,8 @@ function writePersonSchedule(path, s) { // assuming the path refers to the locat
         if (typeof s[k] === 'string') {
             database.ref(path + key + '/').set(s[k]); // publish the key value pair at the specified path
         } else {
-            writePersonSchedule(path + key + '/', s[key]) // if it's not a string, it's an object and we must recur a level deeper
+            console.log('recursion reached');
+            writePersonSchedule(path + k + '/', s[k]) // if it's not a string, it's an object and we must recur a level deeper
         }
     }
 }
@@ -145,7 +137,6 @@ function getPersons(){
             });
         });
         return peopleList;
-        console.log(leadsRef);
 }
 
 var stephan = new Person("jose", "joseisawesome", "2");
