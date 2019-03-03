@@ -34,15 +34,6 @@
         console.log("Test");*/
 
         //example code that pushes up info to the cloud
-        function writeUserData(userId, name, email, imageUrl) {
-          firebase.database().ref('users/' + userId).set({
-            username: name,
-            email: email,
-            profile_picture : imageUrl
-          });
-        }
-
-        writeUserData("233","jose","joseandrade","test.png"); //calling this function to test
       </script>
     </head>
 

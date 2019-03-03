@@ -51,7 +51,7 @@ class Person {
         return first[0] - second[0];
       });
     }
-
+    /* NOT NEEDED ANYMORE
     // week is a so-called "dictionary"
     // each value in the key-value pair represents a day, which is a "dictionary of workout instances"
     addEmptyWeek() {
@@ -65,7 +65,7 @@ class Person {
         for (let i = 0; i < 4; i++) {
             this.addEmptyWeek()
         }
-    }
+    } */
 }
 
 class Workout {
@@ -103,11 +103,10 @@ function writePerson(person) {
         level: person.level,
         schedule: ""
     });
-
-    // writePersonSchedule('users/' + person.uname + '/schedule/', person._schedule)
 }
 
 // NOT WORKING
+/* WILL REMOVE
 function writePersonSchedule(path, s) { // assuming the path refers to the location in the database that we want to place s
     // assuming s is an object (a dictionary)
     for (let k in s) { // for each key in s
@@ -123,24 +122,60 @@ function writePersonSchedule(path, s) { // assuming the path refers to the locat
             writePersonSchedule(path + k + '/', s[k]) // if it's not a string, it's an object and we must recur a level deeper
         }
     }
-}
+}*/
 
-
-function getPersons(){
+/*
+function getPeople(){
         var peopleList = [];
+        //var leadsRef = database.ref('users');
         var leadsRef = database.ref('users');
+        console.log(leadsRef);
+        console.log("testing");
+        //print(leadsRef);
         leadsRef.on('value', function(snapshot) {
             snapshot.forEach(function(childSnapshot) {
               var childData = childSnapshot.val(); //childData is just the child of the information that is going in
               peopleList.push(childData);
-              console.log(childData);
+              //console.log(childData);
+              //console.log("hm");
             });
         });
+        console.log(leadsRef);
         return peopleList;
+        //------------------------------------------
+} */
+
+function findUserName(name)
+{
+        var test = database.ref('users');
+        test.on('value', function(snapshot) {
+          databaseInfoDict = snapshot.val();
+          for(var key in databaseInfoDict){
+            console.log(key);
+            if(key === name)
+              return true;
+          }
+        });
 }
 
+function logInUser(username,password)
+{
+  if(findUserName==true)
+    return true;
+}
+
+function registerUser(username,password)
+{
+  if(findUserName==true) //this means that the username is taken
+    return false;
+  else {
+    //.........
+  }
+}
+
+/*
 var stephan = new Person("jose", "joseisawesome", "2");
 stephan.addEmptyMonth();
 console.log(stephan._schedule);
-writePerson(stephan);
+writePerson(stephan);*/
 // getPersons();
