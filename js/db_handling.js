@@ -195,11 +195,17 @@ findUserPassword("adam");
 window.onload=function(){
     (function (global) {
         document.getElementById("logINButton").addEventListener("click", function () {
+            window.location = "home_tangerine.html";
             console.log("what the fuck?");
-            if(findUserName)
+            console.log(document.getElementById("exampleInputEmail1").value);
+            if(findUserName(document.getElementById("exampleInputEmail1").value));
             {
-              global.localStorage.setItem("mySharedData", document.getElementById("output").value);
+              //sessionStorage.setItem("mySharedData", document.getElementById("exampleInputEmail1").value);
+              console.log(sessionStorage.getItem("mySharedData"));
+              document.location.href = "home_tangerine.html";
             }
+            //document.getElementById("exampleInputEmail1").value;
+
         }, false);
     }(window));
 }
