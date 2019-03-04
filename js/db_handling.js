@@ -158,6 +158,15 @@ function findUserName(name)
         });
 }
 
+function findUserPassword(name)
+{
+  var location = database.ref('users/'+name);
+  location.on('value', function(snapshot) {
+    databaseInfoDict = snapshot.val();
+    console.log(databaseInfoDict);
+  });
+}
+
 function logInUser(username,password)
 {
   if(findUserName==true)
@@ -179,3 +188,18 @@ stephan.addEmptyMonth();
 console.log(stephan._schedule);
 writePerson(stephan);*/
 // getPersons();
+findUserPassword("adam");
+
+// ------------------------------------------------------------
+// this will start how JS will interact with the HTML packages
+window.onload=function(){
+    (function (global) {
+        document.getElementById("logINButton").addEventListener("click", function () {
+            console.log("what the fuck?");
+            if(findUserName)
+            {
+              global.localStorage.setItem("mySharedData", document.getElementById("output").value);
+            }
+        }, false);
+    }(window));
+}

@@ -10,23 +10,14 @@
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
 
-      <!-- The firebase information. Its the following two scripts that will be added wherever firebase will be needed-->
       <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+      <script src="js/db_handling.js"></script>
+      <!-- The firebase information. Its the following two scripts that will be added wherever firebase will be needed-->
       <script>
         // Initialize Firebase
         // TODO:Replace everything inside the config with your own things(to Adam)
         //Make sure that the firebase is a live database and not a standard database and also edit the permissions to display True
-        var config = {
-          piKey: "AIzaSyDAmQ3nH3wD2WbGuigeNQYhmW_mp0nQdIU",
-          authDomain: "project-26ab1.firebaseapp.com",
-          databaseURL: "https://project-26ab1.firebaseio.com",
-          projectId: "project-26ab1",
-          storageBucket: "project-26ab1.appspot.com",
-          messagingSenderId: "888262615637"
-        };
-        firebase.initializeApp(config);
         /* code that didn't work
         var test = document.getElementById("test");
         var dbRef = firebase.database().ref().child('text');
@@ -131,7 +122,7 @@
                   <label class="form-check-label" for="exampleCheck1">Remember me</label>
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Log in</button><br>
+                  <button type="submit" class="btn btn-primary" id="logINButton">Log in</button><br>
                   <a class="btn btn-link text-dark" href="#" role="button">Forgot Password?</a><br>
                   <a class="btn btn-link text-dark" href="#" role="button">Don't have an account? <b>Get Sarted</b></a>
                 </div>
