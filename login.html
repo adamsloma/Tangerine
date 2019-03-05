@@ -96,17 +96,21 @@
       <div>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="btn btn-light disabled" role="button" href="login.html">Log in</a>
+            <a class="btn btn-light disabled" role="button" href="login.html"><b>LOG IN</b> or <b>SIGN UP</b></a>
           </li>
         </ul>
       </div>
     </nav>
     <br><br><br><br>
     <!-- BODY -->
+    <!-- LOG IN FORM-->
     <div class="container">
-      <div class="row justify-content-md-center">
-        <div class="col align-self-center">
+      <div class="row">
+        <div class="col-5">
           <div class="card">
+            <div class="card-header text-center">
+              <b>LOG IN</b>
+            </div>
             <div class="card-body">
               <form>
                 <div class="form-group">
@@ -122,15 +126,94 @@
                   <label class="form-check-label" for="exampleCheck1">Remember me</label>
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary" id="logINButton">Log in</button><br>
+                  <button type="submit" class="btn btn-primary" id="logINButton">Log me in</button><br>
                   <a class="btn btn-link text-dark" href="#" role="button">Forgot Password?</a><br>
-                  <a class="btn btn-link text-dark" href="#" role="button">Don't have an account? <b>Get Sarted</b></a>
                 </div>
               </form>
             </div>
           </div>
         </div>
+        <!-- OR -->
+        <div class="col-2 align-self-center text-center">
+          <h5>OR</h5>
+        </div>
+        <!-- SIGN UP FORM -->
+        <div class="col-5">
+          <div class="card">
+            <div class="card-header text-center">
+              <b>SIGN UP</b>
+            </div>
+            <div class="card-body">
+              <form class="needs-validation" novalidate>
+                <div class="form-group">
+                  <label for="validationCustom01">First Name</label>
+                  <input type="text" class="form-control" id="validationCustom01" placeholder="John" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback">
+                    Please input your first name.
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="validationCustom02">Last Name</label>
+                  <input type="text" class="form-control" id="validationCustom02" placeholder="Doe" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback">
+                    Please input your last name.
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                  <div class="invalid-feedback">
+                    Please choose a valid email.
+                  </div>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                <div class="form-group" id="show_hide_password">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter password" required>
+                  <div class="invalid-feedback">
+                    Please choose a password.
+                  </div>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary" id="logINButton">Sign me up!</button>
+                </div>
+              </form>
+              <!-- SIGN UP VALIDATION SCRIPT -->
+              <script>
+              // Example starter JavaScript for disabling form submissions if there are invalid fields
+              (function() {
+                'use strict';
+                window.addEventListener('load', function() {
+                  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                  var forms = document.getElementsByClassName('needs-validation');
+                  // Loop over them and prevent submission
+                  var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                      if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                      }
+                      form.classList.add('was-validated');
+                    }, false);
+                  });
+                }, false);
+              })();
+              </script>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </div><br><br>
 
 </html>
