@@ -12,6 +12,8 @@ class Person {
     // It's easier to make everything a dictionary than try to manage the incomplete support for lists
     // https://firebase.googleblog.com/2014/04/best-practices-arrays-in-firebase.html
 
+
+
     get schedule() {
         return this._schedule;
     }
@@ -20,12 +22,16 @@ class Person {
         this._schedule = value;
     }
 
-    constructor(uname, password, level) {
+    constructor(firstName, lastName, email, dateOfBirth, uname, password, level) {
+        this.firstName = firstName; //str 
+        this.lastName = lastName; //str
+        this.email = email; //str
+        this.dateOfBirth = dateOfBirth; //str
         this.uname = uname;         // str
         this.password = password;   // str
-        this.level = level;         // int
+        this.level = level;         // int //what is this Adam?
         this._schedule = {};
-        this.count = -1;
+        this.count = -1; //this should start at 0. When the user creates a workoutList it shouldn't start at 0 lists it should be 1 list
     }
 
     // a day is represented by a "dictionary" of Workout instances
@@ -38,19 +44,21 @@ class Person {
       this._schedule[getDate()] = workoutList;
       }
 
+    /* THESE FUNCTIONS ARE NOT USEFUL
     turnDictIntoList(dict) //this does what it says, turns a dictionary into a list in order to sort it when needed
     {
       var items = Object.keys(dict).map(function(key) {
         return [key, dict[key]];
         });
     }
-    // Sort the array based on the second element
+    // Sort the array based on the first element
     sortByKey()
     {
       items.sort(function(first, second) {
         return first[0] - second[0];
       });
-    }
+    } */
+
     /* NOT NEEDED ANYMORE
     // week is a so-called "dictionary"
     // each value in the key-value pair represents a day, which is a "dictionary of workout instances"
@@ -98,7 +106,7 @@ var database = firebase.database();
 // TODO: fix schedule component so that it's written to the database
 
 function writePerson(person) {
-    database.ref('users/' + person.uname).set({
+    database.ref('users/' + person.uname.trim()).set({
         password: person.password,
         level: person.level,
         schedule: ""
@@ -145,32 +153,42 @@ function getPeople(){
         //------------------------------------------
 } */
 
-function findUserName(name)
+function findUserName(name) //enter a name and returns either true or false depending if the info is within the database
 {
-        var test = database.ref('users');
-        test.on('value', function(snapshot) {
-          databaseInfoDict = snapshot.val();
+        var databaseInfo = database.ref('users');
+        databaseInfo.on('value', function(snapshot) {
+          databaseInfoDict = snapshot.val().trim(); //WILL HAVE TO TRIM THE STRING AND MAKE SURE THAT IT IS A STRING THAT IS BEING PASSED INTO HERE
           for(var key in databaseInfoDict){
-            console.log(key);
             if(key === name)
               return true;
           }
         });
+        return false; //false if nothing is found
 }
 
-function findUserPassword(name)
+function findUserPassword(name) //this will find the password and return it
 {
   var location = database.ref('users/'+name);
   location.on('value', function(snapshot) {
     databaseInfoDict = snapshot.val();
-    console.log(databaseInfoDict);
+    //console.log(databaseInfoDict.password);
+    return databaseInfoDict.password;
   });
 }
 
 function logInUser(username,password)
 {
   if(findUserName==true)
-    return true;
+    {
+      if(password === findUserPassword(username))
+        return 1; //this means that the user is in the system and had the correct password.
+      else {
+        return 0; // this means that the user is in the system but the user had the wrong password
+      }
+    }
+  else {
+    return -1; //this means there is no user with that name
+  }
 }
 
 function registerUser(username,password)
@@ -188,7 +206,7 @@ stephan.addEmptyMonth();
 console.log(stephan._schedule);
 writePerson(stephan);*/
 // getPersons();
-findUserPassword("adam");
+//findUserPassword("adam");
 
 // ------------------------------------------------------------
 // this will start how JS will interact with the HTML packages
@@ -203,6 +221,4 @@ window.onload=function(){
             }
         }, false);
     }(window));
-
-    if(sessionStorage.getItem(""))
 }
