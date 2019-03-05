@@ -22,11 +22,10 @@ class Person {
         this._schedule = value;
     }
 
-    constructor(firstName, lastName, email, dateOfBirth, uname, password, level) {
-        this.firstName = firstName; //str 
+    constructor(firstName, lastName, email, uname, password, level) {
+        this.firstName = firstName; //str
         this.lastName = lastName; //str
         this.email = email; //str
-        this.dateOfBirth = dateOfBirth; //str
         this.uname = uname;         // str
         this.password = password;   // str
         this.level = level;         // int //what is this Adam?
@@ -106,12 +105,17 @@ var database = firebase.database();
 // TODO: fix schedule component so that it's written to the database
 
 function writePerson(person) {
-    database.ref('users/' + person.uname.trim()).set({
+    database.ref('users/' + person.uname).set({
+        email: person.email,
+        firstName: person.firstName,
+        lastName: person.lastName,
         password: person.password,
-        level: person.level,
+        //level: person.level,
         schedule: ""
     });
 }
+
+writePerson(new Person("jose","andrade","testing@gmail.com","jfandra1","1"));
 
 // NOT WORKING
 /* WILL REMOVE
@@ -157,9 +161,9 @@ function findUserName(name) //enter a name and returns either true or false depe
 {
         var databaseInfo = database.ref('users');
         databaseInfo.on('value', function(snapshot) {
-          databaseInfoDict = snapshot.val().trim(); //WILL HAVE TO TRIM THE STRING AND MAKE SURE THAT IT IS A STRING THAT IS BEING PASSED INTO HERE
+          databaseInfoDict = snapshot.val(); //WILL HAVE TO TRIM THE STRING AND MAKE SURE THAT IT IS A STRING THAT IS BEING PASSED INTO HERE
           for(var key in databaseInfoDict){
-            if(key === name)
+            if(key.trim() === name)
               return true;
           }
         });
@@ -213,11 +217,11 @@ writePerson(stephan);*/
 window.onload=function(){
     (function (global) {
         document.getElementById("logINButton").addEventListener("click", function () {
-            if(findUserName(document.getElementById("exampleInputEmail1").value)); //if the username works then do this
+            if(findUserName(document.getElementById("exampleInputEmail1").value)); //if the username works then do this gonna have to change this for EMAILS
             {
               sessionStorage.setItem("UserEmail",document.getElementById("exampleInputEmail1"));
               console.log(sessionStorage.getItem("mySharedData"));
-              document.location.href = "home_tangerine.html";
+              //document.location.href = "home_tangerine.html";
             }
         }, false);
     }(window));
