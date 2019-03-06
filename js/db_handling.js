@@ -215,20 +215,53 @@ writePerson(stephan);*/
 
 // ------------------------------------------------------------
 // this will start how JS will interact with the HTML packages
+
+var check=false;
+
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+        check = true; //this will be used in order to make sure that the forms are all completed
+      }, false);
+    });
+  }, false);
+})();
+
+
 window.onload=function(){
     //$(".valid-feedback")[0].style.display="none";
     //$(".text-danger").style.display="inline";
     //$(".test").style.display="none";
-    (function (global) {
         $("#logINButton").bind("click", function () {
           //$(".test").show();
-            if(findUserName($("#exampleInputEmail1").value)); //if the username works then do this gonna have to change this for EMAILS
+          console.log( document.getElementsByClassName("logInEmailInput")[0].value );
+          //document.location.href="youtube.com";
+            //if(findUserName($("#exampleInputEmail1").value) && (typeof $("#exampleInputEmail1").value !== "undefined")); //if the username works then do this gonna have to change this for EMAILS
+            if(!(typeof document.getElementsByClassName("logInEmailInput")[0].value === "undefined"))
             {
               console.log("testing123");
-              sessionStorage.setItem("UserEmail",$("#exampleInputEmail1").value);
-              console.log(sessionStorage.getItem("mySharedData"));
+              //sessionStorage.setItem("UserEmail",$("#exampleInputEmail1").value);
+              //console.log(sessionStorage.getItem("mySharedData"));
               //document.location.href = "home_tangerine.html";
             }
         });
-    }(window));
+
+      $("#signUpButton").bind("click", function() {
+        console.log("SEND HELP PLEASE");
+      });
+
+
+
+
+
 }
