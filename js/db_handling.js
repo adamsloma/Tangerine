@@ -217,13 +217,15 @@ writePerson(stephan);*/
 // this will start how JS will interact with the HTML packages
 window.onload=function(){
     //$(".valid-feedback")[0].style.display="none";
+    //$(".text-danger").style.display="inline";
+    //$(".test").style.display="none";
     (function (global) {
-
-        $("#logINButton").addEventListener("click", function () {
+        $("#logINButton").bind("click", function () {
+          //$(".test").show();
             if(findUserName($("#exampleInputEmail1").value)); //if the username works then do this gonna have to change this for EMAILS
             {
               console.log("testing123");
-              sessionStorage.setItem("UserEmail",$("#exampleInputEmail1"));
+              sessionStorage.setItem("UserEmail",$("#exampleInputEmail1").value);
               console.log(sessionStorage.getItem("mySharedData"));
               //document.location.href = "home_tangerine.html";
             }
