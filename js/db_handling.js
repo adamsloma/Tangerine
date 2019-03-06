@@ -170,6 +170,7 @@ function findUserName(name) //enter a name and returns either true or false depe
         return false; //false if nothing is found
 }
 
+
 function findUserPassword(name) //this will find the password and return it
 {
   var location = database.ref('users/'+name);
@@ -215,14 +216,17 @@ writePerson(stephan);*/
 // ------------------------------------------------------------
 // this will start how JS will interact with the HTML packages
 window.onload=function(){
+    //$(".valid-feedback")[0].style.display="none";
     (function (global) {
-        document.getElementById("logINButton").addEventListener("click", function () {
-            if(findUserName(document.getElementById("exampleInputEmail1").value)); //if the username works then do this gonna have to change this for EMAILS
+
+        $("#logINButton").addEventListener("click", function () {
+            if(findUserName($("#exampleInputEmail1").value)); //if the username works then do this gonna have to change this for EMAILS
             {
-              sessionStorage.setItem("UserEmail",document.getElementById("exampleInputEmail1"));
+              console.log("testing123");
+              sessionStorage.setItem("UserEmail",$("#exampleInputEmail1"));
               console.log(sessionStorage.getItem("mySharedData"));
               //document.location.href = "home_tangerine.html";
             }
-        }, false);
+        });
     }(window));
 }
