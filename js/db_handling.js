@@ -117,25 +117,6 @@ function writePerson(person) {
 
 writePerson(new Person("jose","andrade","testing@gmail.com","jfandra1","1"));
 
-// NOT WORKING
-/* WILL REMOVE
-function writePersonSchedule(path, s) { // assuming the path refers to the location in the database that we want to place s
-    // assuming s is an object (a dictionary)
-    for (let k in s) { // for each key in s
-        if (s.hasOwnProperty(k) === false) {
-            return
-        }
-        // if the type of the object at the specific key is a string
-        // that means we're at the deepest level of the s object's structure
-        if (typeof s[k] === 'string') {
-            database.ref(path + key + '/').set(s[k]); // publish the key value pair at the specified path
-        } else {
-            console.log('recursion reached');
-            writePersonSchedule(path + k + '/', s[k]) // if it's not a string, it's an object and we must recur a level deeper
-        }
-    }
-}*/
-
 /*
 function getPeople(){
         var peopleList = [];
@@ -170,6 +151,21 @@ function findUserName(name) //enter a name and returns either true or false depe
         return false; //false if nothing is found
 }
 
+function returnEmailList()
+{
+  var emailList = [];
+  var databaseInfo = database.ref("users");
+  databaseInfo.on("value", function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      var childData = childSnapshot.val();
+      console.log(childData);
+      emailList.push(childData.email);
+    });
+  });
+  return emailList;
+}
+
+console.log(returnEmailList());
 
 function findUserPassword(name) //this will find the password and return it
 {
