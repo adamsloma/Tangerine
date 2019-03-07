@@ -12,8 +12,6 @@ class Person {
     // It's easier to make everything a dictionary than try to manage the incomplete support for lists
     // https://firebase.googleblog.com/2014/04/best-practices-arrays-in-firebase.html
 
-
-
     get schedule() {
         return this._schedule;
     }
@@ -115,7 +113,7 @@ function writePerson(person) {
     });
 }
 
-writePerson(new Person("jose","andrade","testing@gmail.com","jfandra1","1"));
+writePerson(new Person("juan","juan","juan@gmail.com","juan","noWayYesWay"));
 
 /*
 function getPeople(){
@@ -138,6 +136,7 @@ function getPeople(){
         //------------------------------------------
 } */
 
+/*
 function findUserName(name) //enter a name and returns either true or false depending if the info is within the database
 {
         var databaseInfo = database.ref('users');
@@ -149,32 +148,29 @@ function findUserName(name) //enter a name and returns either true or false depe
           }
         });
         return false; //false if nothing is found
-}
+} */
 
-function returnEmailList()
+function returnDictOfEmailPass()
 {
-  var emailList = [];
+  var emailList = {};
   var databaseInfo = database.ref("users");
   databaseInfo.on("value", function(snapshot) {
-    snapshot.forEach(function(childSnapshot) {
-      var childData = childSnapshot.val();
-      console.log(childData);
-      emailList.push(childData.email);
-      console.log(childData.email);
-    });
+    var databaseInfo = snapshot.val()
+    for(var key in databaseInfo)
+    {
+      emailList[databaseInfo[key].email] = [databaseInfo[key].password,key]; //where 0 is the password and 1 is the key
+    }
   });
-  console.log(emailList);
   return emailList;
 }
 
-console.log(returnEmailList());
+console.log(returnDictOfEmailPass());
 
 function findUserPassword(name) //this will find the password and return it
 {
   var location = database.ref('users/'+name);
   location.on('value', function(snapshot) {
     databaseInfoDict = snapshot.val();
-    //console.log(databaseInfoDict.password);
     return databaseInfoDict.password;
   });
 }
@@ -203,13 +199,6 @@ function registerUser(username,password)
   }
 }
 
-/*
-var stephan = new Person("jose", "joseisawesome", "2");
-stephan.addEmptyMonth();
-console.log(stephan._schedule);
-writePerson(stephan);*/
-// getPersons();
-//findUserPassword("adam");
 
 // ------------------------------------------------------------
 // this will start how JS will interact with the HTML packages
@@ -236,30 +225,79 @@ var check=false;
 })();
 
 
+/*
+
+$("#logINButton").bind("click", function () {
+  //$(".test").show();
+    //console.log( document.getElementsByClassName("logInEmailInput")[0].value );
+    document.location.href="youtube.com";
+    //if(findUserName($("#exampleInputEmail1").value) && (typeof $("#exampleInputEmail1").value !== "undefined")); //if the username works then do this gonna have to change this for EMAILS
+    if(!(typeof document.getElementsByClassName("logInEmailInput")[0].value === "undefined"))
+    {
+      console.log("testing123");
+      //sessionStorage.setItem("UserEmail",$("#exampleInputEmail1").value);
+      //console.log(sessionStorage.getItem("mySharedData"));
+      //document.location.href = "home_tangerine.html";
+    }
+},false);
+
+
+
 window.onload=function(){
     //$(".valid-feedback")[0].style.display="none";
     //$(".text-danger").style.display="inline";
     //$(".test").style.display="none";
-        $("#logINButton").bind("click", function () {
-          //$(".test").show();
-          console.log( document.getElementsByClassName("logInEmailInput")[0].value );
-          //document.location.href="youtube.com";
-            //if(findUserName($("#exampleInputEmail1").value) && (typeof $("#exampleInputEmail1").value !== "undefined")); //if the username works then do this gonna have to change this for EMAILS
-            if(!(typeof document.getElementsByClassName("logInEmailInput")[0].value === "undefined"))
-            {
-              console.log("testing123");
-              //sessionStorage.setItem("UserEmail",$("#exampleInputEmail1").value);
-              //console.log(sessionStorage.getItem("mySharedData"));
-              //document.location.href = "home_tangerine.html";
-            }
-        });
 
       $("#signUpButton").bind("click", function() {
         console.log("SEND HELP PLEASE");
       });
 
+}
+ */
+ /*
+ window.onload=function(){
+     (function (global) {
+         document.getElementById("logINButton").addEventListener("click", function () {
+             if(findUserName(document.getElementById("exampleInputEmail1").value)); //if the username works then do this
+             {
+               //sessionStorage.setItem("UserEmail",document.getElementById("exampleInputEmail1"));
+               console.log(sessionStorage.getItem("mySharedData"));
+               document.location.href = "home_tangerine.html";
+             }
+         }, false);
+     }(window));
 
+     if(sessionStorage.getItem(""))
+ } */
 
+ window.onload=function(){
+     //$(".valid-feedback")[0].style.display="none";
+     //$(".text-danger").style.display="inline";
+     //$(".test").style.display="none";
+     var emailList = returnDictOfEmailPass();
+     $("#logINButton").bind("click", function () {
+      //$(".test").show();
+      //console.log( document.getElementsByClassName("logInEmailInput")[0].value );
+      //document.location.href="youtube.com";
+        //if(findUserName($("#exampleInputEmail1").value) && (typeof $("#exampleInputEmail1").value !== "undefined")); //if the username works then do this gonna have to change this for EMAILS
+      var emailInput = document.getElementById("exampleInputEmail1.1").value;
+      if( !(emailInput === "undefined") )
+      {
+        if(emailInput in emailList)
+        {
+          console.log("in this emailList");
+          console.log(emailList[emailInput]);
+          if(document.getElementById("exampleInputPassword1.1").value === emailList[emailInput][0])
+            //console.log("this has worked");
+            //console.log("username"+emailList[emailInput][1]);
+            sessionStorage.setItem("username",emailList[emailInput][1]);
+        }
+          //console.log("testing123");
+          //document.location.href = "home_tangerine.html";
+      }
+     });
 
-
+     $("#signUpButton").bind("click", function() {
+        console.log("SEND HELP PLEASE");
+     });
 }
