@@ -276,12 +276,14 @@ window.onload=function(){
      //$(".test").style.display="none";
      var emailList = returnDictOfEmailPass();
      $("#logINButton").bind("click", function () {
-      //$(".test").show();
-      //console.log( document.getElementsByClassName("logInEmailInput")[0].value );
-      //document.location.href="youtube.com";
-        //if(findUserName($("#exampleInputEmail1").value) && (typeof $("#exampleInputEmail1").value !== "undefined")); //if the username works then do this gonna have to change this for EMAILS
+      document.getElementById("failemail").style.display = "none";
+      document.getElementById("failpass").style.display = "none";
+
+
       var emailInput = document.getElementById("exampleInputEmail1.1").value;
-      if( !(emailInput === "undefined") )
+      console.log(emailInput);
+      var re = new RegExp("[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*")
+      if(!(emailInput === "undefined") && re.test(emailInput))
       {
         if(emailInput in emailList)
         {
@@ -291,9 +293,15 @@ window.onload=function(){
             //console.log("this has worked");
             //console.log("username"+emailList[emailInput][1]);
             sessionStorage.setItem("username",emailList[emailInput][1]);
+          else {
+                document.getElementById("failpass").style.display = "inline";
+          }
         }
-          //console.log("testing123");
-          //document.location.href = "home_tangerine.html";
+        else {
+        
+          document.getElementById("failemail").style.display = "inline";
+        }
+
       }
      });
 
