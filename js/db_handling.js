@@ -160,8 +160,10 @@ function returnEmailList()
       var childData = childSnapshot.val();
       console.log(childData);
       emailList.push(childData.email);
+      console.log(childData.email);
     });
   });
+  console.log(emailList);
   return emailList;
 }
 
