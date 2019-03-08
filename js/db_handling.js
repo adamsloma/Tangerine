@@ -192,50 +192,6 @@ var check=false;
 })();
 
 
-/*
-
-$("#logINButton").bind("click", function () {
-  //$(".test").show();
-    //console.log( document.getElementsByClassName("logInEmailInput")[0].value );
-    document.location.href="youtube.com";
-    //if(findUserName($("#exampleInputEmail1").value) && (typeof $("#exampleInputEmail1").value !== "undefined")); //if the username works then do this gonna have to change this for EMAILS
-    if(!(typeof document.getElementsByClassName("logInEmailInput")[0].value === "undefined"))
-    {
-      console.log("testing123");
-      //sessionStorage.setItem("UserEmail",$("#exampleInputEmail1").value);
-      //console.log(sessionStorage.getItem("mySharedData"));
-      //document.location.href = "home_tangerine.html";
-    }
-},false);
-
-
-
-window.onload=function(){
-    //$(".valid-feedback")[0].style.display="none";
-    //$(".text-danger").style.display="inline";
-    //$(".test").style.display="none";
-
-      $("#signUpButton").bind("click", function() {
-        console.log("SEND HELP PLEASE");
-      });
-
-}
- */
- /*
- window.onload=function(){
-     (function (global) {
-         document.getElementById("logINButton").addEventListener("click", function () {
-             if(findUserName(document.getElementById("exampleInputEmail1").value)); //if the username works then do this
-             {
-               //sessionStorage.setItem("UserEmail",document.getElementById("exampleInputEmail1"));
-               console.log(sessionStorage.getItem("mySharedData"));
-               document.location.href = "home_tangerine.html";
-             }
-         }, false);
-     }(window));
-
-     if(sessionStorage.getItem(""))
- } */
 
  window.onload=function(){
      //$(".valid-feedback")[0].style.display="none";
