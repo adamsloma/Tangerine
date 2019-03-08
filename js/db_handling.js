@@ -105,6 +105,7 @@ var database = firebase.database();
 function writePerson(person) {
     database.ref('users/' + person.uname).set({
         email: person.email,
+        userName:person.uname,
         firstName: person.firstName,
         lastName: person.lastName,
         password: person.password,
@@ -164,7 +165,22 @@ function returnDictOfEmailPass()
   return emailList;
 }
 
-console.log(returnDictOfEmailPass());
+function returnUserNameList()
+{
+  var userNameList = [];
+  var databaseInfo = database.ref("users");
+  databaseInfo.on("value", function(snapshot) {
+    var databaseInfo = snapshot.val()
+    for(var key in databaseInfo)
+    {
+      userNameList.push(databaseInfo[key].userName); //where 0 is the password and 1 is the key
+    }
+  });
+  return userNameList;
+}
+
+//console.log(returnUserNameList());
+//console.log(returnDictOfEmailPass());
 
 function findUserPassword(name) //this will find the password and return it
 {
@@ -260,7 +276,7 @@ window.onload=function(){
      //$(".text-danger").style.display="inline";
      //$(".test").style.display="none";
      var emailList = returnDictOfEmailPass();
-
+     var userNameList = returnUserNameList();
      $("#logINButton").bind("click", function () {
 
        document.getElementById("failemail").style.display = "none";
@@ -273,9 +289,6 @@ window.onload=function(){
        {
         if(emailInput in emailList)
         {
-
-          //console.log("in this emailList");
-          //console.log(emailList[emailInput]);
           if(document.getElementById("exampleInputPassword1.1").value === emailList[emailInput][0])
           {
             //console.log("this has worked");
@@ -295,7 +308,11 @@ window.onload=function(){
       }
      });
 
+     $("#validationCustomUsername").bind("keyup", function(event) {
+      console.log(document.getElementById("validationCustomUsername").value);
+      var userInputInUserName = document.getElementById("validationCustomUsername").value;
 
+     });
 
      $("#signUpButton").bind("click", function() {
         //console.log("SEND HELP PLEASE");
