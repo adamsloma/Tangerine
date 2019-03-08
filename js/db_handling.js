@@ -142,6 +142,7 @@ function returnUserNameList()
       userNameList.push(databaseInfo[key].userName); //where 0 is the password and 1 is the key
     }
   });
+  //console.log(userNameList);
   return userNameList;
 }
 
@@ -193,20 +194,27 @@ var check=false;
 
 
 
+
  window.onload=function(){
      //$(".valid-feedback")[0].style.display="none";
      //$(".text-danger").style.display="inline";
      //$(".test").style.display="none";
      var emailList = returnDictOfEmailPass();
      var userNameList = returnUserNameList();
+     console.log(emailList);
+     console.log(userNameList);
+     //document.location.href="http:Syoutube.com";
 
-     $("#logINButton").bind("click", function () {
+     //$("#logINButton").bind("click", function () {
+
+     document.getElementById("logINButton").addEventListener("click", function () {
+       //location.href="https://youtube.com";
 
        document.getElementById("failemail").style.display = "none";
        document.getElementById("failpass").style.display = "none";
 
        var emailInput = document.getElementById("exampleInputEmail1.1").value;
-       //console.log(emailInput);
+
        var re = new RegExp("[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*")
        if(!(emailInput === "undefined") && re.test(emailInput))
        {
@@ -215,6 +223,7 @@ var check=false;
           if(document.getElementById("exampleInputPassword1.1").value === emailList[emailInput][0])
           {
             sessionStorage.setItem("username",emailList[emailInput][1]); //this will send the information into the server which can be retrieve with later
+            window.location.href="home_tangerine.html";
           }
           else
           {
@@ -227,15 +236,17 @@ var check=false;
         }
 
       }
-     });
+    });
 
      var registeredEmail = false;
      var registeredUsername = false;
+
 
      //this is for the registering for the username input to check that it is notbeing used
      $("#validationCustomUsername").bind("keyup", function(event) {
       console.log(document.getElementById("validationCustomUsername").value);
       var userInputInUserName = document.getElementById("validationCustomUsername").value;
+      console.log(userNameList);
       if(userInputInUserName in userNameList)
       {
         registeredUsername = true;
@@ -261,6 +272,6 @@ var check=false;
         //console.log("SEND HELP PLEASE");
         //bind to the username input textbox to check if the username is available as well as the email to check if that is available
 
-        var userInput
-     });
+        //var userInput
+     }); 
 }
