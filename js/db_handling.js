@@ -1,3 +1,4 @@
+import 'Person'
 
 // Initialize Firebase
 //Make sure that the firebase is a live database and not a standard database and also edit the permissions to display True
