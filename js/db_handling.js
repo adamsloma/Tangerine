@@ -38,39 +38,10 @@ class Person {
     }
 
     addDay2(workoutList){
-      this._schedule[getDate()] = workoutList;
+      var currentDate = new Date();
+      this._schedule[currentDate] = workoutList;
       }
 
-    /* THESE FUNCTIONS ARE NOT USEFUL
-    turnDictIntoList(dict) //this does what it says, turns a dictionary into a list in order to sort it when needed
-    {
-      var items = Object.keys(dict).map(function(key) {
-        return [key, dict[key]];
-        });
-    }
-    // Sort the array based on the first element
-    sortByKey()
-    {
-      items.sort(function(first, second) {
-        return first[0] - second[0];
-      });
-    } */
-
-    /* NOT NEEDED ANYMORE
-    // week is a so-called "dictionary"
-    // each value in the key-value pair represents a day, which is a "dictionary of workout instances"
-    addEmptyWeek() {
-        for (let i = 0; i < 7; i++) {
-            this.addDay({})
-        }
-    }
-
-    // month isn't even anything. it's just four weeks ...... this depends on the month tho
-    addEmptyMonth() {
-        for (let i = 0; i < 4; i++) {
-            this.addEmptyWeek()
-        }
-    } */
 }
 
 class Workout {
@@ -315,7 +286,7 @@ window.onload=function(){
      $("#validationCustomUsername").bind("keyup", function(event) {
       console.log(document.getElementById("validationCustomUsername").value);
       var userInputInUserName = document.getElementById("validationCustomUsername").value;
-      if(userInputInUserName)
+      //if(userInputInUserName)
      });
 
      //this is for the registering for the email input to check that it is not being used
