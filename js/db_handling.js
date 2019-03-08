@@ -79,7 +79,7 @@ function writePerson(person) {
     });
 }
 var juan = new Person("juan","juan","juan@gmail.com","juan","noWayYesWay");
-juan.addDay2(new Workout("test","cardio","101","yes"));
+juan.addDay(new Workout("test","cardio","101","yes"));
 writePerson(juan);
 
 /*
@@ -236,7 +236,16 @@ var check=false;
      $("#validationCustomUsername").bind("keyup", function(event) {
       console.log(document.getElementById("validationCustomUsername").value);
       var userInputInUserName = document.getElementById("validationCustomUsername").value;
-      //if(userInputInUserName)
+      if(userInputInUserName in userNameList)
+      {
+        registeredUsername = true;
+        console.log(registeredUsername);
+      }
+      else{
+        registeredUsername = false;
+        console.log(registeredUsername);
+
+      }
      });
 
      //this is for the registering for the email input to check that it is not being used
