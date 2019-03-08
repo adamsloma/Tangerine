@@ -260,37 +260,47 @@ window.onload=function(){
      //$(".text-danger").style.display="inline";
      //$(".test").style.display="none";
      var emailList = returnDictOfEmailPass();
+
      $("#logINButton").bind("click", function () {
-      document.getElementById("failemail").style.display = "none";
-      document.getElementById("failpass").style.display = "none";
 
+       document.getElementById("failemail").style.display = "none";
+       document.getElementById("failpass").style.display = "none";
 
-      var emailInput = document.getElementById("exampleInputEmail1.1").value;
-      console.log(emailInput);
-      var re = new RegExp("[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*")
-      if(!(emailInput === "undefined") && re.test(emailInput))
-      {
+       var emailInput = document.getElementById("exampleInputEmail1.1").value;
+       //console.log(emailInput);
+       var re = new RegExp("[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*")
+       if(!(emailInput === "undefined") && re.test(emailInput))
+       {
         if(emailInput in emailList)
         {
-          console.log("in this emailList");
-          console.log(emailList[emailInput]);
+
+          //console.log("in this emailList");
+          //console.log(emailList[emailInput]);
           if(document.getElementById("exampleInputPassword1.1").value === emailList[emailInput][0])
+          {
             //console.log("this has worked");
             //console.log("username"+emailList[emailInput][1]);
             sessionStorage.setItem("username",emailList[emailInput][1]);
-          else {
+          }
+          else
+          {
                 document.getElementById("failpass").style.display = "inline";
           }
         }
-        else {
-
+        else
+        {
           document.getElementById("failemail").style.display = "inline";
         }
 
       }
      });
 
+
+
      $("#signUpButton").bind("click", function() {
-        console.log("SEND HELP PLEASE");
+        //console.log("SEND HELP PLEASE");
+        //bind to the username input textbox to check if the username is available as well as the email to check if that is available
+        var registeredEmail = false;
+        var registeredUsername = false;
      });
 }
