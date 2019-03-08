@@ -106,11 +106,12 @@ function writePerson(person) {
         lastName: person.lastName,
         password: person.password,
         //level: person.level,
-        schedule: ""
+        schedule: person._schedule
     });
 }
-
-writePerson(new Person("juan","juan","juan@gmail.com","juan","noWayYesWay"));
+var juan = new Person("juan","juan","juan@gmail.com","juan","noWayYesWay");
+juan.addDay2(new Workout("test","cardio","101","yes"));
+writePerson(juan);
 
 /*
 function getPeople(){
@@ -273,6 +274,7 @@ window.onload=function(){
      //$(".test").style.display="none";
      var emailList = returnDictOfEmailPass();
      var userNameList = returnUserNameList();
+
      $("#logINButton").bind("click", function () {
 
        document.getElementById("failemail").style.display = "none";
@@ -287,9 +289,7 @@ window.onload=function(){
         {
           if(document.getElementById("exampleInputPassword1.1").value === emailList[emailInput][0])
           {
-            //console.log("this has worked");
-            //console.log("username"+emailList[emailInput][1]);
-            sessionStorage.setItem("username",emailList[emailInput][1]);
+            sessionStorage.setItem("username",emailList[emailInput][1]); //this will send the information into the server which can be retrieve with later
           }
           else
           {
@@ -304,16 +304,29 @@ window.onload=function(){
       }
      });
 
+     var registeredEmail = false;
+     var registeredUsername = false;
+
+     //this is for the registering for the username input to check that it is notbeing used
      $("#validationCustomUsername").bind("keyup", function(event) {
       console.log(document.getElementById("validationCustomUsername").value);
       var userInputInUserName = document.getElementById("validationCustomUsername").value;
+      if(userInputInUserName)
+     });
+
+     //this is for the registering for the email input to check that it is not being used
+     $("#exampleInputEmail2.1").bind("keyup", function(event) {
+      console.log(document.getElementById("exampleInputEmail2.1").value);
+      var userInputEmailForReg = document.getElementById("exampleInputEmail2.1").value;
 
      });
 
+     console.log(emailList);
+     console.log(userNameList);
      $("#signUpButton").bind("click", function() {
         //console.log("SEND HELP PLEASE");
         //bind to the username input textbox to check if the username is available as well as the email to check if that is available
-        var registeredEmail = false;
-        var registeredUsername = false;
+
+        var userInput
      });
 }
