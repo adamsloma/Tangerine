@@ -1,0 +1,43 @@
+.container{
+	width:80%;
+	margin:auto;
+}
+
+#main{
+	float:left;
+	width:20%px;
+	padding:0 20px;
+	box-sizing:border-box;
+	background:#D8B731;
+	height:435px;
+}
+
+.my-form label{
+	display:block;
+}
+
+.button{
+	background-color:#333
+	color:#fff;
+	padding:10px 15px;
+	border:none;
+}
+
+.button:hover{
+	background:red;
+	color:#fff;
+}
+
+#sidebar{
+	float:right;
+	width:60%;
+	background:#D8B731;
+	color:#333;
+	padding:10px;
+	box-sizing:border-box;
+	height:435px;
+}	
+
+.p-bar{
+	border:1px solid#333;
+}
