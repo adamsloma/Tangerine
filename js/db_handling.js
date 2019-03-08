@@ -31,46 +31,11 @@ class Person {
         this.count = -1; //this should start at 0. When the user creates a workoutList it shouldn't start at 0 lists it should be 1 list
     }
 
-    // a day is represented by a "dictionary" of Workout instances
-    addDay(workoutList) {
-        this._schedule[this.count+1] = workoutList;
-        this.count += 1;
-    }
-
-    addDay2(workoutList){
-      this._schedule[getDate()] = workoutList;
+    addDay(workoutList){
+      var currentDate = new Date();
+      this._schedule[currentDate] = workoutList;
       }
 
-    /* THESE FUNCTIONS ARE NOT USEFUL
-    turnDictIntoList(dict) //this does what it says, turns a dictionary into a list in order to sort it when needed
-    {
-      var items = Object.keys(dict).map(function(key) {
-        return [key, dict[key]];
-        });
-    }
-    // Sort the array based on the first element
-    sortByKey()
-    {
-      items.sort(function(first, second) {
-        return first[0] - second[0];
-      });
-    } */
-
-    /* NOT NEEDED ANYMORE
-    // week is a so-called "dictionary"
-    // each value in the key-value pair represents a day, which is a "dictionary of workout instances"
-    addEmptyWeek() {
-        for (let i = 0; i < 7; i++) {
-            this.addDay({})
-        }
-    }
-
-    // month isn't even anything. it's just four weeks ...... this depends on the month tho
-    addEmptyMonth() {
-        for (let i = 0; i < 4; i++) {
-            this.addEmptyWeek()
-        }
-    } */
 }
 
 class Workout {
@@ -110,11 +75,12 @@ function writePerson(person) {
         lastName: person.lastName,
         password: person.password,
         //level: person.level,
-        schedule: ""
+        schedule: person._schedule
     });
 }
-
-writePerson(new Person("juan","juan","juan@gmail.com","juan","noWayYesWay"));
+var juan = new Person("juan","juan","juan@gmail.com","juan","noWayYesWay");
+juan.addDay(new Workout("test","cardio","101","yes"));
+writePerson(juan);
 
 /*
 function getPeople(){
@@ -226,50 +192,6 @@ var check=false;
 })();
 
 
-/*
-
-$("#logINButton").bind("click", function () {
-  //$(".test").show();
-    //console.log( document.getElementsByClassName("logInEmailInput")[0].value );
-    document.location.href="youtube.com";
-    //if(findUserName($("#exampleInputEmail1").value) && (typeof $("#exampleInputEmail1").value !== "undefined")); //if the username works then do this gonna have to change this for EMAILS
-    if(!(typeof document.getElementsByClassName("logInEmailInput")[0].value === "undefined"))
-    {
-      console.log("testing123");
-      //sessionStorage.setItem("UserEmail",$("#exampleInputEmail1").value);
-      //console.log(sessionStorage.getItem("mySharedData"));
-      //document.location.href = "home_tangerine.html";
-    }
-},false);
-
-
-
-window.onload=function(){
-    //$(".valid-feedback")[0].style.display="none";
-    //$(".text-danger").style.display="inline";
-    //$(".test").style.display="none";
-
-      $("#signUpButton").bind("click", function() {
-        console.log("SEND HELP PLEASE");
-      });
-
-}
- */
- /*
- window.onload=function(){
-     (function (global) {
-         document.getElementById("logINButton").addEventListener("click", function () {
-             if(findUserName(document.getElementById("exampleInputEmail1").value)); //if the username works then do this
-             {
-               //sessionStorage.setItem("UserEmail",document.getElementById("exampleInputEmail1"));
-               console.log(sessionStorage.getItem("mySharedData"));
-               document.location.href = "home_tangerine.html";
-             }
-         }, false);
-     }(window));
-
-     if(sessionStorage.getItem(""))
- } */
 
  window.onload=function(){
      //$(".valid-feedback")[0].style.display="none";
@@ -277,6 +199,7 @@ window.onload=function(){
      //$(".test").style.display="none";
      var emailList = returnDictOfEmailPass();
      var userNameList = returnUserNameList();
+
      $("#logINButton").bind("click", function () {
 
        document.getElementById("failemail").style.display = "none";
@@ -291,9 +214,7 @@ window.onload=function(){
         {
           if(document.getElementById("exampleInputPassword1.1").value === emailList[emailInput][0])
           {
-            //console.log("this has worked");
-            //console.log("username"+emailList[emailInput][1]);
-            sessionStorage.setItem("username",emailList[emailInput][1]);
+            sessionStorage.setItem("username",emailList[emailInput][1]); //this will send the information into the server which can be retrieve with later
           }
           else
           {
@@ -308,16 +229,38 @@ window.onload=function(){
       }
      });
 
+     var registeredEmail = false;
+     var registeredUsername = false;
+
+     //this is for the registering for the username input to check that it is notbeing used
      $("#validationCustomUsername").bind("keyup", function(event) {
       console.log(document.getElementById("validationCustomUsername").value);
       var userInputInUserName = document.getElementById("validationCustomUsername").value;
+      if(userInputInUserName in userNameList)
+      {
+        registeredUsername = true;
+        console.log(registeredUsername);
+      }
+      else{
+        registeredUsername = false;
+        console.log(registeredUsername);
+
+      }
+     });
+
+     //this is for the registering for the email input to check that it is not being used
+     $("#exampleInputEmail2.1").bind("keyup", function(event) {
+      console.log(document.getElementById("exampleInputEmail2.1").value);
+      var userInputEmailForReg = document.getElementById("exampleInputEmail2.1").value;
 
      });
 
+     console.log(emailList);
+     console.log(userNameList);
      $("#signUpButton").bind("click", function() {
         //console.log("SEND HELP PLEASE");
         //bind to the username input textbox to check if the username is available as well as the email to check if that is available
-        var registeredEmail = false;
-        var registeredUsername = false;
+
+        var userInput
      });
 }
