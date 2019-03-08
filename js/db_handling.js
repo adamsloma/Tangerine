@@ -175,21 +175,6 @@ function findUserPassword(name) //this will find the password and return it
   });
 }
 
-function logInUser(username,password)
-{
-  if(findUserName==true)
-    {
-      if(password === findUserPassword(username))
-        return 1; //this means that the user is in the system and had the correct password.
-      else {
-        return 0; // this means that the user is in the system but the user had the wrong password
-      }
-    }
-  else {
-    return -1; //this means there is no user with that name
-  }
-}
-
 function registerUser(username,password)
 {
   if(findUserName==true) //this means that the username is taken
@@ -298,7 +283,7 @@ window.onload=function(){
           }
         }
         else {
-        
+
           document.getElementById("failemail").style.display = "inline";
         }
 
