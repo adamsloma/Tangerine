@@ -31,13 +31,7 @@ class Person {
         this.count = -1; //this should start at 0. When the user creates a workoutList it shouldn't start at 0 lists it should be 1 list
     }
 
-    // a day is represented by a "dictionary" of Workout instances
-    addDay(workoutList) {
-        this._schedule[this.count+1] = workoutList;
-        this.count += 1;
-    }
-
-    addDay2(workoutList){
+    addDay(workoutList){
       var currentDate = new Date();
       this._schedule[currentDate] = workoutList;
       }
