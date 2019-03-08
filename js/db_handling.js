@@ -32,12 +32,8 @@ class Person {
     }
 
     // a day is represented by a "dictionary" of Workout instances
-    addDay(workoutList) {
-        this._schedule[this.count+1] = workoutList;
-        this.count += 1;
-    }
 
-    addDay2(workoutList){
+    addDay(workoutList){
       this._schedule[getDate()] = workoutList;
       }
 
