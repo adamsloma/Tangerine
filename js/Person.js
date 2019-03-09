@@ -37,7 +37,7 @@ export default class Person {
       }
 
 }
-
+/*
 export default class Workout {
     constructor(title, type, difficulty, details) {
         this.title = title;             // str, a title for the workout
@@ -45,4 +45,4 @@ export default class Workout {
         this.difficulty = difficulty;   // int, the 101 stuff
         this.details = details;         // the instructions required to actually do the workout
     }
-}
+} */

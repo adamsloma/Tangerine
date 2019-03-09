@@ -1,5 +1,5 @@
-import Person from './Person.js';
-import Workout from "./Person.js"
+import Person from './Person';
+//import Workout from "./Person.js";
 
 // Initialize Firebase
 //Make sure that the firebase is a live database and not a standard database and also edit the permissions to display True
