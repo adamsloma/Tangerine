@@ -1,4 +1,5 @@
-import 'Person'
+import Person from './Person.js';
+import Workout from "./Person.js"
 
 // Initialize Firebase
 //Make sure that the firebase is a live database and not a standard database and also edit the permissions to display True
@@ -226,5 +227,5 @@ var check=false;
         //bind to the username input textbox to check if the username is available as well as the email to check if that is available
 
         //var userInput
-     }); 
+     });
 }

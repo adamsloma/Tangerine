@@ -1,5 +1,5 @@
 // Person class is a tree that stores all user data
-class Person {
+export default class Person {
     // each person represents someone who has various things going on
     // users are authenticated by checking the 'uname' attribute against a list of
     // usernames
@@ -38,7 +38,7 @@ class Person {
 
 }
 
-class Workout {
+export default class Workout {
     constructor(title, type, difficulty, details) {
         this.title = title;             // str, a title for the workout
         this.type = type;               // str, the type of workout (options are "weightlifting", "cardio", "HIIT")
