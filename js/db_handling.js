@@ -80,9 +80,9 @@ function writePerson(person) {
         schedule: person._schedule
     });
 }
-var juan = new Person("juan","juan","juan@gmail.com","juan","noWayYesWay");
-juan.addDay(new Workout("test","cardio","101","yes"));
-writePerson(juan);
+//var juan = new Person("juan","juan","juan@gmail.com","juan","noWayYesWay");
+//juan.addDay(new Workout("test","cardio","101","yes"));
+//writePerson(juan);
 
 /*
 function getPeople(){
@@ -294,7 +294,7 @@ var check=false;
             window.location.href = "home_tangerine.html";
           }
           else {
-            
+
           }
         }
 
