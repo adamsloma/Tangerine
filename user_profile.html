@@ -92,54 +92,60 @@
 	        </ul>
 	      </div>
 	    </nav><br><br><br><br>
-<body>
-	<div class ="container">
-	<section id="main">
-		<img class="card-img-top" src="download.png" alt="Card image cap">
-		<h5>@Username
-		</h5>	
-		<h5>Profile
-		</h5>
-		<h5>Work Out Goals/Challenges 
-		</h5>
-			
-		<input class="button" type="submit" value="Change Password" name="ChangePassword">
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-	</section>
-		<aside id="sidebar">
-				<h1>Personal Profile</h1>
-				<form class="my-form">
-					<div class="form-group">
-						<label>Username: </label>
-						<input type="text" name="username">
+		<!-- BODY -->
+		<body>
+			<div class ="container">
+				<div class="row justify-content-md-center">
+					<div class="col-3 border border-info rounded"><br>
+						<img class="card-img-top" src="download.png" alt="Card image cap">
+						<p class="text-center h5">@Username</p><br>
+						<!-- VERTICAL NAV BAR-->
+						<div class="nav nav-pills flex-column" aria-orientation="vertical">
+							<li class="nav-item">
+						  	<a class="nav-link active" href="user_profile.html" role="tab">PROFILE</a>
+							</li>
+							<li>
+						  	<a class="nav-link" href="goals_challenges.html">WORKOUT CALENDAR</a>
+							</li>
+						</div><br>
 					</div>
-					<div class="form-group">
-						<label>First Name: </label>
-						<input type="text" name="firstname">
+					<!-- SPACE BETWEEN NAV BAR AND CONTENT -->
+					<div class="col-1">
 					</div>
-					<div class="form-group">
-						<label>Last Name: </label>
-						<input type="text" name="lastname">
+					<!-- NAV BAR CONTENT -->
+					<div class="col-8 border border-info rounded">
+						<h1 class="display-4 text-center" style="font-size: 2.7rem">Personal Profile</h1><br>
+						<form class="my-form">
+							<div class="form-group">
+								<label>Username: </label>
+								<input type="text" name="username">
+							</div>
+							<div class="form-group">
+								<label>First Name: </label>
+								<input type="text" name="firstname">
+							</div>
+							<div class="form-group">
+								<label>Last Name: </label>
+								<input type="text" name="lastname">
+							</div>
+							<div class="form-group">
+								<label>Email: </label>
+								<input type="text" name="email">
+							</div>
+							<div class="form-group">
+								<label>Change Password: </label>
+								<input type="text" name="email">
+							</div><br>
+							<div class="text-center">
+								<input class="button" type="submit" value="Update Profile" name="UpdateProfile">
+							</div>
+						</form><br>
 					</div>
-					<div class="form-group">
-						<label>Email: </label>
-						<input type="text" name="email">
-					</div>
-					<input class="button" type="submit" value="Update Profile" name="UpdateProfile">
-				</form>
-		</aside>
-
-
-	</div>
-</body>
+				</div>
+			</div><br><br>
+		</body>
+		<!-- FOOTER -->
+    <footer class="page-footer font-small" style="background-color: #fd7e14;">
+      <div class="footer-copyright text-center py-3">© 2019 Copyright</div>
+    </footer>
 </html>
