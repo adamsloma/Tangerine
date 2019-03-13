@@ -18,7 +18,11 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand text-light" href="home_tangerine.html">Tangerine Fit</a>
+      <span>
+        <a class="navbar-brand" href="home_tangerine.html">
+          <img src="logo.png" height="45"></a>
+        <a class="navbar-brand text-light" href="home_tangerine.html">Tangerine Fit</a>
+      </span>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav">
           <!-- HOME BUTTON -->
@@ -85,37 +89,40 @@
           </li>
         </ul>
       </div>
-    </nav>
+    </nav><br><br><br><br>
     <!-- BODY -->
-    <br><br><br>
     <div class="container">
-      <div class="row justify-content-md-center">
-        <div class="col-md-10">
-          <div class="card border-light mb-3">
-            <div class="card-header text-center h5">Fat Loss</div>
-            <div class="card-body text-center">
-              <img src="exercise_bike_fat_loss.jpg" class="img-fluid" alt="Responsive image">
-              <p><i>5 minute warm up period</i>: bike at a normal pace</p>
-              <p><u>Fat Loss Interval</u>: Perform between 10 and 20 times for a workout.<br/><i>- Fast pedaling period</i>: 1 minutes of moderate speed pedaling<br/><i>- Sprinting period</i>: 1 minute of intense/fast pedaling</p>
-              <p><u>Fat Loss Interval</u> x 10 = 25 minutes<br/><u>Fat Loss Interval</u> x 20 = 45 minutes</p>
-            </div>
+      <div class="card-deck">
+        <div class="card">
+          <div class="card-header text-center h5">Fat Loss</div>
+          <img class="card-img-top" src="exercise_bike_fat_loss.jpg" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text text-center"><i>(5 minute warm up period</i>: bike at a normal pace)</p>
+            <p class="card-text"><u>Fat Loss Interval</u>: Perform between 10 and 20 times for a workout.</p>
+            <p class="card-text" style="margin-left: 40px"><i>- Fast pedaling period</i>: 1 minutes of moderate speed pedaling</p>
+            <p class="card-text" style="margin-left: 40px"><i>- Sprinting period</i>: 1 minute of intense/fast pedaling</p>
+            <p class="card-text"><u>Fat Loss Interval</u> x 10 = 25 minutes</p>
+            <p class="card-text"><u>Fat Loss Interval</u> x 20 = 45 minutes</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header text-center h5">Conditioning</div>
+          <img class="card-img-top" src="exercise_bike_conditioning.jpg" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text text-center"><i>(10 minute warm up period</i>: pedal at a light speed)</p>
+            <p class="card-text"><u>Conditioning Interval</u>: Perform between 15 and 25 times for a workout.</p>
+            <p class="card-text" style="margin-left: 40px"><i>- Fast pedal period</i>: 3 minutes of moderate speed pedaling</p>
+            <p class="card-text" style="margin-left: 40px"><i>- Sprinting period</i>: 1 minute of intense/fast pedaling</p>
+            <p class="card-text"><u>Conditioning Interval</u> x 10 = 50 minutes</p>
+            <p class="card-text"><u>Conditioning Interval</u> x 20 = 90 minutes</p>
           </div>
         </div>
       </div>
-
-      <div class="row justify-content-md-center">
-        <div class="col-md-10">
-          <div class="card border-light mb-3">
-            <div class="card-header text-center h5">Conditioning</div>
-            <div class="card-body text-center">
-              <img src="exercise_bike_conditioning.jpg" class="img-fluid" alt="Responsive image">
-              <p><i>10 minute warm up period</i>: pedal at a light speed</p>
-              <p><u>Conditioning Interval</u>: Perform between 15 and 25 times for a workout.<br/><i>- Fast pedal period</i>: 3 minutes of moderate speed pedaling<br/><i>- Sprinting period</i>: 1 minute of intense/fast pedaling</p>
-              <p><u>Conditioning Interval</u> x 10 = 50 minutes<br/><u>Conditioning Interval</u> x 20 = 90 minutes</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    </div><br>
+    <!-- FOOTER -->
+    <footer class="page-footer font-small" style="background-color: #fd7e14;">
+      <div class="footer-copyright text-center py-3">© 2019 Copyright</div>
+    </footer>
 
 </html>

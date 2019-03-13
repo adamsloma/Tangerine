@@ -1,42 +1,44 @@
+
+
 // Person class is a tree that stores all user data
 class Person {
-    // each person represents someone who has various things going on
-    // users are authenticated by checking the 'uname' attribute against a list of
-    // usernames
-    // the password is then verified
-    // super insecure by today's standards but that's fine
+  // each person represents someone who has various things going on
+  // users are authenticated by checking the 'uname' attribute against a list of
+  // usernames
+  // the password is then verified
+  // super insecure by today's standards but that's fine
 
-    // the schedule is represented by a nested dictionary that's explained in functions addDay(), addEmptyWeek(), and addEmptyMonth()
-    // there are points where it would make more sense to use a list. We're not doing this because the way that JSON stores and
-    // returns lists is clunky and strange
-    // It's easier to make everything a dictionary than try to manage the incomplete support for lists
-    // https://firebase.googleblog.com/2014/04/best-practices-arrays-in-firebase.html
+  // the schedule is represented by a nested dictionary that's explained in functions addDay(), addEmptyWeek(), and addEmptyMonth()
+  // there are points where it would make more sense to use a list. We're not doing this because the way that JSON stores and
+  // returns lists is clunky and strange
+  // It's easier to make everything a dictionary than try to manage the incomplete support for lists
+  // https://firebase.googleblog.com/2014/04/best-practices-arrays-in-firebase.html
 
-    get schedule() {
-        return this._schedule;
+  get schedule() {
+      return this._schedule;
+  }
+
+  set schedule(value) {
+      this._schedule = value;
+  }
+
+  constructor(firstName, lastName, email, uname, password) {
+      this.firstName = firstName; //str
+      this.lastName = lastName; //str
+      this.email = email; //str
+      this.uname = uname;         // str
+      this.password = password;   // str
+      this._schedule = {};
+      this.count = -1; //this should start at 0. When the user creates a workoutList it shouldn't start at 0 lists it should be 1 list
+  }
+
+  addDay(workoutList){
+    var currentDate = new Date();
+    this._schedule[currentDate] = workoutList;
     }
-
-    set schedule(value) {
-        this._schedule = value;
-    }
-
-    constructor(firstName, lastName, email, uname, password, level) {
-        this.firstName = firstName; //str
-        this.lastName = lastName; //str
-        this.email = email; //str
-        this.uname = uname;         // str
-        this.password = password;   // str
-        this.level = level;         // int //what is this Adam?
-        this._schedule = {};
-        this.count = -1; //this should start at 0. When the user creates a workoutList it shouldn't start at 0 lists it should be 1 list
-    }
-
-    addDay(workoutList){
-      var currentDate = new Date();
-      this._schedule[currentDate] = workoutList;
-      }
 
 }
+
 
 class Workout {
     constructor(title, type, difficulty, details) {
@@ -78,9 +80,9 @@ function writePerson(person) {
         schedule: person._schedule
     });
 }
-var juan = new Person("juan","juan","juan@gmail.com","juan","noWayYesWay");
-juan.addDay(new Workout("test","cardio","101","yes"));
-writePerson(juan);
+//var juan = new Person("juan","juan","juan@gmail.com","juan","noWayYesWay");
+//juan.addDay(new Workout("test","cardio","101","yes"));
+//writePerson(juan);
 
 /*
 function getPeople(){
@@ -142,11 +144,10 @@ function returnUserNameList()
       userNameList.push(databaseInfo[key].userName); //where 0 is the password and 1 is the key
     }
   });
+  //console.log(userNameList);
   return userNameList;
 }
 
-//console.log(returnUserNameList());
-//console.log(returnDictOfEmailPass());
 
 function findUserPassword(name) //this will find the password and return it
 {
@@ -157,13 +158,10 @@ function findUserPassword(name) //this will find the password and return it
   });
 }
 
-function registerUser(username,password)
+function registerUser(firstName, lastName, email,uname,password)
 {
-  if(findUserName==true) //this means that the username is taken
-    return false;
-  else {
-    //.........
-  }
+  var newPerson = new Person(firstName,lastName,email,uname,password);
+  writePerson(newPerson);
 }
 
 
@@ -193,28 +191,36 @@ var check=false;
 
 
 
+
  window.onload=function(){
      //$(".valid-feedback")[0].style.display="none";
      //$(".text-danger").style.display="inline";
      //$(".test").style.display="none";
      var emailList = returnDictOfEmailPass();
      var userNameList = returnUserNameList();
+     console.log(emailList);
+     console.log(userNameList);
+     //document.location.href="http:Syoutube.com";
 
      $("#logINButton").bind("click", function () {
+
+     //document.getElementById("logINButton").addEventListener("click", function () {
+       //location.href="https://youtube.com";
 
        document.getElementById("failemail").style.display = "none";
        document.getElementById("failpass").style.display = "none";
 
-       var emailInput = document.getElementById("exampleInputEmail1.1").value;
-       //console.log(emailInput);
+       var emailInput = document.getElementById("exampleInputEmail2").value;
+
        var re = new RegExp("[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*")
        if(!(emailInput === "undefined") && re.test(emailInput))
        {
         if(emailInput in emailList)
         {
-          if(document.getElementById("exampleInputPassword1.1").value === emailList[emailInput][0])
+          if(document.getElementById("exampleInputPassword2").value === emailList[emailInput][0])
           {
             sessionStorage.setItem("username",emailList[emailInput][1]); //this will send the information into the server which can be retrieve with later
+            window.location.href="home_tangerine.html";
           }
           else
           {
@@ -227,40 +233,71 @@ var check=false;
         }
 
       }
-     });
+    });
 
      var registeredEmail = false;
      var registeredUsername = false;
 
+
      //this is for the registering for the username input to check that it is notbeing used
-     $("#validationCustomUsername").bind("keyup", function(event) {
-      console.log(document.getElementById("validationCustomUsername").value);
+     $("#validationCustomUsername").bind("keyup", function() {
+      //console.log(document.getElementById("validationCustomUsername").value);
       var userInputInUserName = document.getElementById("validationCustomUsername").value;
-      if(userInputInUserName in userNameList)
+      console.log(userNameList);
+      console.log(userInputInUserName);
+      console.log("juan" in userNameList);
+      if(userNameList.indexOf(userInputInUserName) > -1) //  cehcking is the username the user types is a currently already used username
       {
         registeredUsername = true;
-        console.log(registeredUsername);
+        document.getElementById("usernamePass").style.display="none";
+        document.getElementById("usernameFail").innerHTML="Username is already registered";
+        document.getElementById("usernameFail").style.display="inline";
+
+
       }
       else{
+        document.getElementById("usernameFail").innerHTML="Please choose a username";
+        document.getElementById("usernameFail").style.display="none";
+        document.getElementById("usernamePass").style.display="inline";
         registeredUsername = false;
         console.log(registeredUsername);
-
       }
      });
-
+     /*
      //this is for the registering for the email input to check that it is not being used
-     $("#exampleInputEmail2.1").bind("keyup", function(event) {
-      console.log(document.getElementById("exampleInputEmail2.1").value);
-      var userInputEmailForReg = document.getElementById("exampleInputEmail2.1").value;
+     $("#exampleInputEmail4").bind("keyup", function() {
+       console.log("test");
+      console.log(document.getElementById("exampleInputEmail4").value);
+      var userInputEmailForReg = document.getElementById("exampleInputEmail4").value;
+      console.log(userInputEmailForReg);
+      if(userInputEmailForReg in emailList)
+      {
+        registeredEmail = true;
+      }
+      else {
+        registeredEmail = false;
+      }
 
-     });
+    });*/
 
-     console.log(emailList);
-     console.log(userNameList);
      $("#signUpButton").bind("click", function() {
         //console.log("SEND HELP PLEASE");
-        //bind to the username input textbox to check if the username is available as well as the email to check if that is available
+        //bind to the username input textbox to check if the username is available as well as the email to check if that is available //done
+        if( !registeredUsername)
+        {
+          console.log("the username is not registered");
+          if( (document.getElementById("signUpFirstName").value !== "") && (document.getElementById("signUpLastName").value !== "") && (document.getElementById("exampleInputEmail4").value !== "") && (document.getElementById("validationCustomUsername").value !== "") && (document.getElementById("exampleInputPassword4").value !== "") )
+          {
+            console.log(document.getElementById("signUpFirstName").value+document.getElementById("signUpLastName").value+document.getElementById("exampleInputEmail4").value+document.getElementById("validationCustomUsername").value+document.getElementById("exampleInputPassword4").value)
+            //registerUser(firstname,lastname, email,uname,password);
+            registerUser(document.getElementById("signUpFirstName").value,document.getElementById("signUpLastName").value,document.getElementById("exampleInputEmail4").value,document.getElementById("validationCustomUsername").value,document.getElementById("exampleInputPassword4").value);
+            window.location.href = "home_tangerine.html";
+          }
+          else {
 
-        var userInput
+          }
+        }
+
+        //var userInput
      });
 }
