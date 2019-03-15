@@ -95,6 +95,10 @@
       <div class="card-deck">
         <div class="card">
           <div class="card-header text-center h5">Fat Loss</div>
+            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#myModal">
+              <img src="plus.png"  width="20" alt="Plus sign">
+              Add to Calendar
+            </button>
           <img class="card-img-top" src="treadmill_fat_loss.jpg" alt="Card image cap">
           <div class="card-body">
             <p class="card-text text-center"><i>(5 minute warm up period</i>: walk at a normal pace)</p>
@@ -106,8 +110,38 @@
           </div>
         </div>
 
+        <!-- Modal -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Choose a Date</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="row">
+                      <div class="col">
+                        <input type="date" max="2050-12-31" min="2019-01-31">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary">Add Workout</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
         <div class="card">
           <div class="card-header text-center h5">Conditioning</div>
+            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#myModal">
+              <img src="plus.png"  width="20" alt="Plus sign">
+              Add to Calendar
+            </button>
           <img class="card-img-top" src="treadmill_conditioning.jpg" alt="Card image cap">
           <div class="card-body">
             <p class="card-text text-center"><i>(10 minute warm up period</i>: walk at a normal pace)</i></p>
